@@ -374,7 +374,7 @@ const Portfolio = () => {
             issuer: 'Mimo',
             date: '2025',
             link: './assets/images/Html.jpg',
-            skills: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design']
+            technologies: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design']
         },
         {
             id: 8,
@@ -386,7 +386,7 @@ const Portfolio = () => {
             issuer: 'Mimo',
             date: '2025',
             link: './assets/images/javaScript.jpg',
-            skills: ['ES6+', 'DOM', 'APIs', 'Async Programming']
+            technologies: ['ES6+', 'DOM', 'APIs', 'Async Programming']
         },
         {
             id: 9,
@@ -398,7 +398,7 @@ const Portfolio = () => {
             issuer: 'Mimo',
             date: '2025',
             link: './assets/images/React.jpg',
-            skills: ['React', 'JSX', 'Hooks', 'State Management']
+            technologies: ['React', 'JSX', 'Hooks', 'State Management']
         },
         {
             id: 10,
@@ -410,7 +410,7 @@ const Portfolio = () => {
             issuer: 'Mimo',
             date: '2025',
             link: './assets/images/FrontEndDevelopment.jpg',
-            skills: ['Frontend', 'UX/UI', 'Mobile First', 'Accessibility']
+            technologies: ['Frontend', 'UX/UI', 'Mobile First', 'Accessibility']
         },
         {
             id: 11,
@@ -422,7 +422,7 @@ const Portfolio = () => {
             issuer: 'Mimo',
             date: '2025',
             link: './assets/images/TypeScript.jpg',
-            skills: ['TypeScript', 'Node.js', 'APIs', 'Microservices']
+            technologies: ['TypeScript', 'Node.js', 'APIs', 'Microservices']
         },
         {
             id: 12,
@@ -434,7 +434,7 @@ const Portfolio = () => {
             issuer: 'Mimo',
             date: '2025',
             link: './assets/images/Css.jpg',
-            skills: ['CSS3', 'Responsive Design', 'Flexbox', 'Grid']
+            technologies: ['CSS3', 'Responsive Design', 'Flexbox', 'Grid']
         }
     ];
 
