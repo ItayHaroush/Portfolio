@@ -76,6 +76,17 @@
         overflow-y: auto;
         transform: translateY(-110%);
         opacity: 0;
+        /* Always show menu-toggle on mobile */
+        .menu-toggle {
+            display: flex !important;
+            z-index: 1100;
+            background: var(--primary-color);
+            border-radius: var(--border-radius-full);
+            box-shadow: var(--shadow-md);
+        }
+        .menu-toggle span {
+            background: #fff;
+        }
         visibility: hidden;
         transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
