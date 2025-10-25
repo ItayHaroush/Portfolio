@@ -352,7 +352,9 @@ const Portfolio = () => {
             type: 'certificate',
             image: './assets/images/Java.jpg',
             description: 'תעודת הסמכה ב-Java - פיתוח אפליקציות עם Java, Spring Boot ו-RESTful APIs.',
-            technologies: ['Java', 'Spring Boot', 'RESTful APIs', 'Microservices'],
+            issuer: 'Mimo',
+            date: '2025',
+            skills: ['Java', 'Spring Boot', 'RESTful APIs', 'Microservices'],
             link: './assets/images/Java.jpg',
             github: '#',
             featured: true,
@@ -370,7 +372,7 @@ const Portfolio = () => {
             issuer: 'Mimo',
             date: '2025',
             link: './assets/images/Html.jpg',
-            technologies: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design']
+            skills: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design']
         },
         {
             id: 8,
@@ -382,7 +384,7 @@ const Portfolio = () => {
             issuer: 'Mimo',
             date: '2025',
             link: './assets/images/javaScript.jpg',
-            technologies: ['ES6+', 'DOM', 'APIs', 'Async Programming']
+            skills: ['ES6+', 'DOM', 'APIs', 'Async Programming']
         },
         {
             id: 9,
@@ -394,7 +396,7 @@ const Portfolio = () => {
             issuer: 'Mimo',
             date: '2025',
             link: './assets/images/React.jpg',
-            technologies: ['React', 'JSX', 'Hooks', 'State Management']
+            skills: ['React', 'JSX', 'Hooks', 'State Management']
         },
         {
             id: 10,
@@ -406,7 +408,7 @@ const Portfolio = () => {
             issuer: 'Mimo',
             date: '2025',
             link: './assets/images/FrontEndDevelopment.jpg',
-            technologies: ['Frontend', 'UX/UI', 'Mobile First', 'Accessibility']
+            skills: ['Frontend', 'UX/UI', 'Mobile First', 'Accessibility']
         },
         {
             id: 11,
@@ -418,7 +420,7 @@ const Portfolio = () => {
             issuer: 'Mimo',
             date: '2025',
             link: './assets/images/TypeScript.jpg',
-            technologies: ['TypeScript', 'Node.js', 'APIs', 'Microservices']
+            skills: ['TypeScript', 'Node.js', 'APIs', 'Microservices']
         },
         {
             id: 12,
@@ -430,7 +432,7 @@ const Portfolio = () => {
             issuer: 'Mimo',
             date: '2025',
             link: './assets/images/Css.jpg',
-            technologies: ['CSS3', 'Responsive Design', 'Flexbox', 'Grid']
+            skills: ['CSS3', 'Responsive Design', 'Flexbox', 'Grid']
         }
     ];
 
