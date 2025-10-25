@@ -296,7 +296,6 @@ const Portfolio = () => {
             link: 'https://itayharoush.github.io/MyPortfolio/index.html',
             github: 'https://github.com/ItayHaroush/MyPortfolio',
             featured: true,
-            number: 1
         },
         {
             id: 2,
@@ -310,7 +309,6 @@ const Portfolio = () => {
             github: 'https://github.com/itayHaroush/PacmanGame',
             featured: true,
             isExternal: true,
-            number: 2
         },
         {
             id: 3,
@@ -323,7 +321,6 @@ const Portfolio = () => {
             link: 'https://itayharoush.great-site.net/index.php',
             github: 'https://github.com/itayHaroush/MyLearnApp',
             featured: true,
-            number: 3
         },
         {
             id: 4,
@@ -335,7 +332,6 @@ const Portfolio = () => {
             technologies: ['HTML5', 'CSS3', 'JavaScript', 'PHP', 'MySQL'],
             link: 'https://tefenorders.great-site.net/landingPage.php',
             featured: true,
-            number: 4
         },
         {
             id: 5,
@@ -347,7 +343,7 @@ const Portfolio = () => {
             technologies: ['HTML5', 'CSS3', 'JavaScript', 'PHP', 'MySQL'],
             link: 'https://rotemamosnails.great-site.net/rhNails.php',
             featured: true,
-            number: 5
+
         },
         {
             id: 6,
@@ -360,7 +356,7 @@ const Portfolio = () => {
             link: './assets/images/Java.jpg',
             github: '#',
             featured: true,
-            number: 6
+            
         },
         
         // 🏆 תעודות הסמכה (כפי שמופיעות באנימציה)
