@@ -147,7 +147,7 @@ const Hero = ({ scrollToSection }) => {
                     
                     <div className="hero-stats">
                         <div className="stat-item" data-aos="fade-up" data-aos-delay="200">
-                            <span className="stat-number">5+</span>
+                            <span className="stat-number">30+</span>
                             <span className="stat-label">פרוייקטים</span>
                         </div>
                         <div className="stat-item" data-aos="fade-up" data-aos-delay="300">
@@ -188,16 +188,14 @@ const Hero = ({ scrollToSection }) => {
                             <h3>איתי הרוש</h3>
                             <p>Full Stack Developer</p>
                         </div>
-                        <div className="floating-elements">
-                            <div className="tech-stack">
-                                <div className="tech-item">HTML & CSS</div>
-                                <div className="tech-item">React</div>
-                                <div className="tech-item">JavaScript</div>
-                                <div className="tech-item">PHP</div>
-                                <div className="tech-item">MySQL</div>
-                                
-
-                            </div>
+                    </div>
+                    
+                    <div className="floating-elements">
+                        <div className="tech-stack">
+                            <div className="tech-item">React</div>
+                            <div className="tech-item">JavaScript</div>
+                            <div className="tech-item">PHP</div>
+                            <div className="tech-item">MySQL</div>
                         </div>
                     </div>
                 </div>
@@ -217,27 +215,27 @@ const Services = () => {
     const services = [
         {
             icon: 'bx-desktop',
-            title: 'אתרי תדמית ודפי נחיתה',
-            description: 'פיתוח אתרי תדמית, דפי נחיתה ואתרי פורטפוליו רספונסיביים עם דגש על עיצוב, נגישות וקידום אורגני.',
-            features: ['HTML5, CSS3, JavaScript, React', 'עיצוב רספונסיבי', 'התאמה מלאה למובייל', 'קידום SEO בסיסי']
+            title: '🌐 אתרים עסקיים מתקדמים',
+            description: 'אתרי אינטרנט מקצועיים המניבים לידים ומגדילים מכירות עם עיצוב שמושך ומתקדם טכנולוגית',
+            features: ['תוצאות SEO מובטחות', 'זמן טעינה מהיר (מתחת ל-3 שניות)', 'מותאם לכל המכשירים', 'מערכת ניהול תוכן פשוטה']
         },
         {
             icon: 'bx-mobile-alt',
-            title: 'מערכות ניהול ותהליכים',
-            description: 'פיתוח מערכות ניהול לקוחות, ניהול תורים, ניהול מטבח, ומערכות פנימיות בהתאמה אישית.',
-            features: ['PHP, MySQL, JavaScript', 'ממשק ניהול ידידותי', 'אבטחת מידע בסיסית', 'התאמה לצרכי העסק']
+            title: '💼 מערכות ניהול חכמות',
+            description: 'פתרונות CRM ו-ERP מותאמים אישית שחוסכים זמן ומייעלים תהליכים עסקיים',
+            features: ['ממשק משתמש אינטואיטיבי', 'אינטגרציה עם מערכות קיימות', 'דוחות ואנליטיקה מתקדמת', 'גיבוי אוטומטי ואבטחת מידע']
         },
         {
             icon: 'bx-store',
-            title: 'חנויות אונליין ומסחר',
-            description: 'בניית חנויות אינטרנטיות, סליקה, ניהול מלאי, ותמיכה במבצעים ושיווק דיגיטלי.',
-            features: ['HTML, CSS, JavaScript', 'מערכת סליקה', 'ניהול מלאי', 'התאמה למבצעים']
+            title: '🛒 חנויות אונליין מניבות',
+            description: 'פלטפורמות מכירה דיגיטליות המביאות תוצאות מיידיות עם חוויית קנייה מותאמת',
+            features: ['מערכת תשלומים מאובטחת', 'ניהול מלאי חכם', 'שיווק אוטומטי ללקוחות', 'אופטימיזציה להמרות גבוהות']
         },
         {
             icon: 'bx-trending-up',
-            title: 'אופטימיזציה ושיפור ביצועים',
-            description: 'שיפור מהירות טעינה, נגישות, חוויית משתמש, ותמיכה טכנית שוטפת לאתרים קיימים.',
-            features: ['בדיקות מהירות', 'התאמת נגישות', 'שיפור חוויית משתמש', 'תמיכה ועדכונים']
+            title: '📈 אופטימיזציה וצמיחה',
+            description: 'שיפור ביצועים קיימים והגדלת ROI דרך אנליזה טכנית וחדשנות דיגיטלית',
+            features: ['ניתוח ביצועים מקיף', 'שיפור מהירות וחוויה', 'אסטרטגיית צמיחה דיגיטלית', 'תמיכה טכנית מתמשכת']
         }
     ];
 
@@ -293,9 +291,10 @@ const Portfolio = () => {
             image: './assets/images/MyPortfolio.png',
             description: 'אתר פורטפוליו אישי המציג את הכישורים והפרוייקטים שלי. בנוי עם HTML & CSS.',
             technologies: ['HTML5', 'CSS3', 'Responsive Design'],
-            link: 'https://itayharoush.github.io/MyPortfolio/index.html',
-            github: 'https://github.com/ItayHaroush/MyPortfolio',
+            link: '../MyPortfolio/index.html',
+            github: '#',
             featured: true,
+            number: 1
         },
         {
             id: 2,
@@ -309,130 +308,83 @@ const Portfolio = () => {
             github: 'https://github.com/itayHaroush/PacmanGame',
             featured: true,
             isExternal: true,
+            number: 2
         },
         {
             id: 3,
-            title: 'Project 3: MyLearn App',
+            title: 'Project 3: Gallery Images',
             category: 'applications',
             type: 'project',
-            image: './assets/images/MyLearn.jpg',
-            description: 'אפליקציית למידה מקוונת עם ממשק משתמש אינטואיטיבי ותוכן עשיר.',
-            technologies: ['HTML5', 'CSS3', 'JavaScript', 'PHP', 'MySQL'],
-            link: 'https://itayharoush.great-site.net/index.php',
-            github: 'https://github.com/itayHaroush/MyLearnApp',
-            featured: true,
+            image: './assets/images/gallery-placeholder.jpg',
+            description: 'גלריית תמונות דינמית עם אפקטים ויזואליים מתקדמים.',
+            technologies: ['HTML5', 'CSS3', 'JavaScript'],
+            link: '#',
+            github: '#',
+            status: 'coming-soon',
+            number: 3
         },
         {
             id: 4,
-            title: 'Project 4: ChefSync IL ',
-            category: 'applications',
+            title: 'Project 4: React Portfolio',
+            category: 'websites',
             type: 'project',
-            image: './assets/images/ChefSyncIL.png',
-            description: 'ממשק מנהל אפליקציית ניהול מטבח עם ממשק משתמש אינטואיטיבי.',
-            technologies: ['HTML5', 'CSS3', 'JavaScript', 'PHP', 'MySQL'],
-            link: 'https://tefenorders.great-site.net/landingPage.php',
-            featured: true,
-        },
-        {
-            id: 5,
-            title: 'Project 5: Rotem Nails',
-            category: 'applications',
-            type: 'project',
-            image: './assets/images/rhNails.png',
-            description: 'אפליקציית ניהול תורים לסלון ציפורניים.',
-            technologies: ['HTML5', 'CSS3', 'JavaScript', 'PHP', 'MySQL'],
-            link: 'https://rotemamosnails.great-site.net/rhNails.php',
-            featured: true,
-
-        },
-        {
-            id: 6,
-            title: 'Java Certificate',
-            category: 'certificates',
-            type: 'certificate',
-            image: './assets/images/Java.jpg',
-            description: 'תעודת הסמכה ב-Java - פיתוח אפליקציות עם Java, Spring Boot ו-RESTful APIs.',
-            issuer: 'Mimo',
-            date: '2025',
-            skills: ['Java', 'Spring Boot', 'RESTful APIs', 'Microservices'],
-            link: './assets/images/Java.jpg',
+            image: './assets/images/react-portfolio.jpg',
+            description: 'פורטפוליו מתקדם זה עם React, אנימציות ועיצוב responsive מודרני.',
+            technologies: ['React', 'CSS Grid', 'JavaScript ES6+', 'Mobile First'],
+            link: './index.html',
             github: '#',
             featured: true,
-            
+            number: 4
         },
         
         // 🏆 תעודות הסמכה (כפי שמופיעות באנימציה)
         {
-            id:  7,
+            id: 5,
             title: 'Web Development Certificate',
             category: 'certificates',
             type: 'certificate',
-            image: './assets/images/Html.jpg',
+            image: './assets/images/cert-web-dev.jpg',
             description: 'תעודת הסמכה בפיתוח אתרים - HTML, CSS, JavaScript וטכנולוגיות web מודרניות',
-            issuer: 'Mimo',
-            date: '2025',
-            link: './assets/images/Html.jpg',
+            issuer: 'מכון טכנולוגי מתקדם',
+            date: '2024',
+            link: '#',
             skills: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design']
         },
         {
-            id: 8,
+            id: 6,
             title: 'JavaScript Advanced Certificate',
             category: 'certificates',
             type: 'certificate',
-            image: './assets/images/javaScript.jpg',
+            image: './assets/images/cert-js.jpg',
             description: 'הסמכה מתקדמת ב-JavaScript, DOM manipulation ופיתוח אפליקציות אינטראקטיביות',
-            issuer: 'Mimo',
-            date: '2025',
-            link: './assets/images/javaScript.jpg',
+            issuer: 'פלטפורמת קודינג מקוונת',
+            date: '2024',
+            link: '#',
             skills: ['ES6+', 'DOM', 'APIs', 'Async Programming']
         },
         {
-            id: 9,
+            id: 7,
             title: 'React Development Certificate',
             category: 'certificates',
             type: 'certificate',
-            image: './assets/images/React.jpg',
+            image: './assets/images/cert-react.jpg',
             description: 'תעודת הסמכה בפיתוח עם React, JSX, Hooks ו-State Management',
-            issuer: 'Mimo',
-            date: '2025',
-            link: './assets/images/React.jpg',
+            issuer: 'אקדמיה דיגיטלית',
+            date: '2024',
+            link: '#',
             skills: ['React', 'JSX', 'Hooks', 'State Management']
         },
         {
-            id: 10,
+            id: 8,
             title: 'Frontend Development Certificate',
             category: 'certificates',
             type: 'certificate',
-            image: './assets/images/FrontEndDevelopment.jpg',
+            image: './assets/images/cert-frontend.jpg',
             description: 'הסמכה מקצועית בפיתוח Frontend, עיצוב רספונסיבי ו-UX/UI',
-            issuer: 'Mimo',
-            date: '2025',
-            link: './assets/images/FrontEndDevelopment.jpg',
+            issuer: 'מכללה טכנולוגית',
+            date: '2023',
+            link: '#',
             skills: ['Frontend', 'UX/UI', 'Mobile First', 'Accessibility']
-        },
-        {
-            id: 11,
-            title: 'TypeScript Certificate',
-            category: 'certificates',
-            type: 'certificate',
-            image: './assets/images/TypeScript.jpg',
-            description: 'תעודת הסמכה ב-TypeScript - פיתוח אפליקציות עם TypeScript ו-Node.js.',
-            issuer: 'Mimo',
-            date: '2025',
-            link: './assets/images/TypeScript.jpg',
-            skills: ['TypeScript', 'Node.js', 'APIs', 'Microservices']
-        },
-        {
-            id: 12,
-            title: 'CSS Certificate',
-            category: 'certificates',
-            type: 'certificate',
-            image: './assets/images/Css.jpg',
-            description: 'תעודת הסמכה ב-CSS - עיצוב אתרים עם CSS ו-Responsive Design.',
-            issuer: 'Mimo',
-            date: '2025',
-            link: './assets/images/Css.jpg',
-            skills: ['CSS3', 'Responsive Design', 'Flexbox', 'Grid']
         }
     ];
 
@@ -573,11 +525,11 @@ const Portfolio = () => {
                 {/* סטטיסטיקות מעודכנות */}
                 <div className="portfolio-stats" data-aos="fade-up">
                     <div className="stat-item">
-                        <span className="stat-number">5+</span>
+                        <span className="stat-number">4</span>
                         <span className="stat-label">פרוייקטים</span>
                     </div>
                     <div className="stat-item">
-                        <span className="stat-number">7+</span>
+                        <span className="stat-number">4</span>
                         <span className="stat-label">תעודות הסמכה</span>
                     </div>
                     <div className="stat-item">
@@ -912,5 +864,3 @@ const Footer = () => {
 // Render the app
 const root = ReactDOM.createRoot(document.getElementById('app'));
 root.render(<App />);
-
-

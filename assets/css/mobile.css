@@ -19,10 +19,29 @@
         min-height: 100vh;
         padding: var(--spacing-2xl) 0 var(--spacing-xl);
     }
+
+    /* Ensure hero content is not hidden by the fixed header on mobile
+       Reserve extra top space equal to the navbar height (adjustable) */
+    :root {
+        --navbar-height: 70px; /* adjust if your header is taller */
+    }
+
+    .hero {
+        /* push the hero content down so the title isn't covered by the fixed header */
+        padding-top: calc(var(--navbar-height) + 1.25rem);
+    }
+
+    /* Bring the down-arrow into view and ensure it's above other layers */
+    .scroll-indicator {
+        z-index: 1100;
+        bottom: 1rem; /* make arrow visible above bottom chrome */
+    }
     
     .hero-content {
         padding: 0 var(--spacing-md);
         gap: var(--spacing-2xl);
+        margin-top: calc(-1 * var(--navbar-height)); /* offset the extra top padding */
+        margin-bottom: var(--spacing-xl);
     }
     
     .hero-text h1 {
@@ -63,27 +82,37 @@
     
     /* Mobile navigation improvements */
     .nav-menu {
+        /* anchor to top so the menu content is visible immediately when opened */
         position: fixed;
-        top: 70px;
+        top: 0;
         left: 0;
         right: 0;
-        background: var(--bg-primary);
+        background: #ffffff; /* keep menu white for clarity on mobile */
         flex-direction: column;
-        padding: var(--spacing-xl);
+        /* reserve space for the header/brand so items don't get hidden behind it */
+        padding-top: calc(var(--navbar-height, 70px) + 0.75rem);
+        padding-left: var(--spacing-xl);
+        padding-right: var(--spacing-xl);
+        padding-bottom: var(--spacing-xl);
         box-shadow: var(--shadow-xl);
         border-top: 1px solid var(--border-color);
-        max-height: calc(100vh - 70px);
+        max-height: calc(100vh - var(--navbar-height, 70px));
         overflow-y: auto;
-        transform: translateY(-110%);
+        transform: translateY(-100%);
         opacity: 0;
         visibility: hidden;
-        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transition: all 0.28s cubic-bezier(0.22, 1, 0.36, 1);
     }
-    
+
     .nav-menu.active {
         transform: translateY(0);
         opacity: 1;
         visibility: visible;
+    }
+
+    /* keep the header above the menu so brand + hamburger are always visible */
+    .navbar {
+        z-index: 1200;
     }
     
     .nav-link {
@@ -215,7 +244,10 @@
         text-align: center;
     }
 }
-
+.scroll-indicator {
+    z-index: 1100;
+    bottom: 1rem; /* make arrow visible above bottom chrome */
+}
 /* Extra small devices */
 @media (max-width: 480px) {
     :root {
@@ -380,12 +412,18 @@
 /* Dark mode mobile optimizations */
 @media (prefers-color-scheme: dark) and (max-width: 768px) {
     .nav-menu {
-        background: var(--bg-secondary);
+        /* force white menu background so menu items remain readable in dark mode */
+        background: #ffffff !important;
         border-top-color: var(--border-color);
     }
     
     .contact-form {
         background: var(--bg-secondary);
+    }
+
+    /* make hamburger lines contrast the (white) menu when in dark mode on mobile */
+    .menu-toggle span {
+        background: var(--text-primary) !important; /* dark lines */
     }
 }
 
