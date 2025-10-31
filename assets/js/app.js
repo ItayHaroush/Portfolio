@@ -328,10 +328,10 @@ const Portfolio = () => {
             title: 'Project 4: React Portfolio',
             category: 'websites',
             type: 'project',
-            image: 'https://itayharoush.github.io/Portfolio/index.html',
+            image: 'assets/images/logo.jpeg',
             description: 'פורטפוליו מתקדם זה עם React, אנימציות ועיצוב responsive מודרני.',
             technologies: ['React', 'CSS Grid', 'JavaScript ES6+', 'Mobile First'],
-            link: './index.html',
+            link: 'https://itayharoush.github.io/Portfolio/index.html',
             github: '#',
             featured: true,
             number: 4
