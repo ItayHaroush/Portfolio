@@ -396,9 +396,12 @@ const Portfolio = () => {
         { id: 'certificates', label: 'תעודות הסמכה', icon: 'bx-medal' }
     ];
 
-    const filteredItems = activeFilter === 'all' 
-        ? portfolioItems 
-        : portfolioItems.filter(item => item.category === activeFilter);
+    // חישוב הפריטים המסוננים עם useMemo כדי לוודא עדכון מיידי
+    const filteredItems = React.useMemo(() => {
+        return activeFilter === 'all' 
+            ? portfolioItems 
+            : portfolioItems.filter(item => item.category === activeFilter);
+    }, [activeFilter, portfolioItems]);
 
     return (
         <section id="portfolio" className="portfolio section">
