@@ -611,7 +611,7 @@ const Portfolio = () => {
                 {/* סטטיסטיקות מעודכנות */}
                 <div className="portfolio-stats" data-aos="fade-up">
                     <div className="stat-item">
-                        <span className="stat-number">5</span>
+                        <span className="stat-number">6</span>
                         <span className="stat-label">פרוייקטים</span>
                     </div>
                     <div className="stat-item">
@@ -619,7 +619,7 @@ const Portfolio = () => {
                         <span className="stat-label">תעודות הסמכה</span>
                     </div>
                     <div className="stat-item">
-                        <span className="stat-number">2</span>
+                        <span className="stat-number">4</span>
                         <span className="stat-label">פרוייקטים פעילים</span>
                     </div>
                     <div className="stat-item">
@@ -806,10 +806,7 @@ ${formData.phone ? `• טלפון: ${formData.phone}` : ''}
     return (
         <section id="contact" className="contact">
             <div className="container">
-                <div className="section-header" data-aos="fade-up">
-                    <h2>בואו ניצור קשר</h2>
-                    <p>מוכנים להפוך את הרעיון שלכם למציאות? אשמח לשמוע על הפרוייקט שלכם</p>
-                </div>
+              
 
                 <div className="contact-content">
                     <div className="contact-info" data-aos="fade-right">
@@ -847,6 +844,11 @@ ${formData.phone ? `• טלפון: ${formData.phone}` : ''}
                             ))}
                         </div>
                     </div>
+                      
+                <div className="section-header" data-aos="fade-up">
+                    <h2>בואו ניצור קשר</h2>
+                    <p>מוכנים להפוך את הרעיון שלכם למציאות? אשמח לשמוע על הפרוייקט שלכם</p>
+               
 
                     <form className="contact-form" onSubmit={handleSubmit} data-aos="fade-left">
                         <div className="form-group">
@@ -911,6 +913,7 @@ ${formData.phone ? `• טלפון: ${formData.phone}` : ''}
                     </form>
                 </div>
             </div>
+             </div>
         </section>
     );
 };
