@@ -14,10 +14,23 @@
         padding: var(--spacing-md);
     }
     
-    /* Optimize hero section for mobile */
-    .hero {
-        min-height: 100vh;
-        padding: var(--spacing-2xl) 0 var(--spacing-xl);
+    /* Floating elements responsive adjustments */
+    .floating-elements {
+        top: -30px;
+        left: -30px;
+        right: -30px;
+        bottom: -30px;
+    }
+    
+    .tech-stack {
+        top: 15%;
+        left: -15%;
+        gap: var(--spacing-sm);
+    }
+    
+    .tech-item {
+        font-size: 0.8rem;
+        padding: var(--spacing-xs) var(--spacing-sm);
     }
 
     /* Ensure hero content is not hidden by the fixed header on mobile
@@ -40,10 +53,10 @@
     .hero-content {
         padding: 0 var(--spacing-md);
         gap: var(--spacing-2xl);
-        margin-top: calc(-1 * var(--navbar-height)); /* offset the extra top padding */
+        margin-top: 150px; /* offset the extra top padding */
         margin-bottom: var(--spacing-xl);
     }
-    
+   
     .hero-text h1 {
         font-size: clamp(2rem, 8vw, 2.5rem);
         line-height: 1.1;
@@ -293,6 +306,25 @@
     .profile-image {
         width: 100px;
         height: 100px;
+    }
+    
+    /* Floating elements adjustments for very small screens */
+    .floating-elements {
+        top: -20px;
+        left: 20px;
+        right: 400px;
+        bottom: -20px;
+    }
+    
+    .tech-stack {
+        top: 10%;
+        left: -10%;
+        gap: var(--spacing-xs);
+    }
+    
+    .tech-item {
+        font-size: 0.7rem;
+        padding: 2px var(--spacing-xs);
     }
     
     .service-card {

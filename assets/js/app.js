@@ -148,7 +148,7 @@ const Hero = ({ scrollToSection }) => {
                     
                     <div className="hero-stats">
                         <div className="stat-item" data-aos="fade-up" data-aos-delay="200">
-                            <span className="stat-number">5</span>
+                            <span className="stat-number">7+</span>
                             <span className="stat-label">פרוייקטים</span>
                         </div>
                         <div className="stat-item" data-aos="fade-up" data-aos-delay="300">

@@ -958,9 +958,7 @@ p {
         height: 120px;
     }
 
-    .tech-stack {
-        display: none;
-    }
+    /* Tech stack now visible on small screens for consistency */
 
     .contact-method {
         flex-direction: column;
