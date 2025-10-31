@@ -1,3 +1,4 @@
+// import { Analytics } from "@vercel/analytics/react"
 // React Components for Modern Portfolio Landing Page
 
 // Main App Component
@@ -147,7 +148,7 @@ const Hero = ({ scrollToSection }) => {
                     
                     <div className="hero-stats">
                         <div className="stat-item" data-aos="fade-up" data-aos-delay="200">
-                            <span className="stat-number">30+</span>
+                            <span className="stat-number">5</span>
                             <span className="stat-label">פרוייקטים</span>
                         </div>
                         <div className="stat-item" data-aos="fade-up" data-aos-delay="300">
@@ -285,7 +286,7 @@ const Portfolio = () => {
         // 🚀 פרוייקטים (ממוספרים 1-4 כמו בדף הקיים)
         {
             id: 1,
-            title: 'Project 1: Portfolio Website',
+            title: 'Portfolio Website',
             category: 'websites',
             type: 'project',
             image: 'assets/images/MyPortfolio.png',
@@ -294,11 +295,70 @@ const Portfolio = () => {
             link: 'https://itayharoush.github.io/MyPortfolio/index.html',
             github: '#',
             featured: true,
-            number: 1
+            
         },
         {
             id: 2,
-            title: 'Project 2: Pacman Game',
+            title: 'Rotem Nails App',
+            category: 'applications',
+            type: 'project',
+            image: 'assets/images/rhNails.png',
+            description: 'אפליקציה לניהול לקוחות ומעקב אחרי טיפולי ציפורניים',
+            technologies: ['React', 'Node.js', 'API Development'],
+            link: 'https://rotemamosnails.great-site.net/rhNails.php?i=1',
+            github: '#',
+            featured: true,
+            status: '',
+            date: '2025',
+            skills: ['PHP', 'MySQL', 'APIs', 'Async Programming']
+            
+        },
+        {
+            id: 3,
+            title: 'ChefSync IL App',
+            category: 'applications',
+            type: 'project',
+            image: 'assets/images/ChefSyncIL.png',
+            description: 'אפליקציה לניהול מתכונים ושיתוף עם שפים אחרים',
+            technologies: ['React', 'Node.js', 'API Development'],
+            link: 'https://tefenorders.great-site.net/landingPage.php?i=1',
+            github: '#',
+            featured: true,
+            status: '',
+            date: '2025',
+            skills: ['MySQL', 'PHP', 'APIs', 'Async Programming']
+            
+        },
+        {
+            id: 4,
+            title: 'React Portfolio',
+            category: 'websites',
+            type: 'project',
+            image: 'assets/images/logo.jpeg',
+            description: 'פורטפוליו מתקדם זה עם React, אנימציות ועיצוב responsive מודרני.',
+            technologies: ['React', 'CSS Grid', 'JavaScript ES6+', 'Mobile First'],
+            link: 'https://itayharoush.github.io/Portfolio/index.html',
+            github: '#',
+            featured: true,
+            
+        },
+        
+        // 🏆 תעודות הסמכה (כפי שמופיעות באנימציה)
+        {
+            id: 5,
+            title: 'Bina Bnya Website',
+            category: 'websites',
+            type: 'project',
+            image: 'assets/images/fulllogo_nobuffer.jpeg',
+            description: 'אתר אינטרנט עבור Bina Bnya, כולל עיצוב מודרני ופונקציות מתקדמות.',
+            technologies: ['HTML5', 'React', 'Node.js', 'CSS3', 'JavaScript'],
+            link: 'https://www-hzh6.vercel.app/',
+            github: '#',
+            featured: true,
+        },
+        {
+            id: 6,
+            title: 'Pacman Game',
             category: 'games',
             type: 'project',
             image: 'assets/images/PacmanGame2.png',
@@ -308,59 +368,7 @@ const Portfolio = () => {
             github: 'https://github.com/itayHaroush/PacmanGame',
             featured: true,
             isExternal: true,
-            number: 2
-        },
-        {
-            id: 3,
-            title: 'Project 3: MyLearn-App',
-            category: 'applications',
-            type: 'project',
-            image: 'assets/images/MyLearn.jpg',
-            description: ' אפליקציית למידה מתקדמת עם תכנים אינטראקטיביים ומערכת דירוג לסרטונים לפי משתמשים.',
-            technologies: ['HTML5', 'CSS3', 'JavaScript'],
-            link: '#',
-            github: '#',
-            status: 'coming-soon',
-            number: 3
-        },
-        {
-            id: 4,
-            title: 'Project 4: React Portfolio',
-            category: 'websites',
-            type: 'project',
-            image: 'assets/images/logo.jpeg',
-            description: 'פורטפוליו מתקדם זה עם React, אנימציות ועיצוב responsive מודרני.',
-            technologies: ['React', 'CSS Grid', 'JavaScript ES6+', 'Mobile First'],
-            link: 'https://itayharoush.github.io/Portfolio/index.html',
-            github: '#',
-            featured: true,
-            number: 4
-        },
-        
-        // 🏆 תעודות הסמכה (כפי שמופיעות באנימציה)
-        {
-            id: 5,
-            title: 'Web Development Certificate',
-            category: 'certificates',
-            type: 'certificate',
-            image: 'assets/images/Html.jpg',
-            description: 'תעודת הסמכה בפיתוח אתרים - HTML, CSS, JavaScript וטכנולוגיות web מודרניות',
-            issuer: 'מכון טכנולוגי מתקדם',
-            date: '2024',
-            link: '#',
-            skills: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design']
-        },
-        {
-            id: 6,
-            title: 'JavaScript Advanced Certificate',
-            category: 'certificates',
-            type: 'certificate',
-            image: 'assets/images/javaScript.jpg',
-            description: 'הסמכה מתקדמת ב-JavaScript, DOM manipulation ופיתוח אפליקציות אינטראקטיביות',
-            issuer: 'פלטפורמת קודינג מקוונת',
-            date: '2024',
-            link: '#',
-            skills: ['ES6+', 'DOM', 'APIs', 'Async Programming']
+       
         },
         {
             id: 7,
@@ -376,6 +384,80 @@ const Portfolio = () => {
         },
         {
             id: 8,
+            title: 'MyLearn-App',
+            category: 'applications',
+            type: 'project',
+            image: 'assets/images/MyLearn.jpg',
+            description: ' אפליקציית למידה מתקדמת עם תכנים אינטראקטיביים ומערכת דירוג לסרטונים לפי משתמשים.',
+            technologies: ['HTML5', 'CSS3', 'JavaScript'],
+            link: '#',
+            github: '#',
+            status: 'coming-soon',
+        },
+        {
+            id: 9,
+            title: 'CSS Mastery Certificate',
+            category: 'certificates',
+            type: 'certificate',
+            image: 'assets/images/Css.jpg',
+            description: 'הסמכה מקצועית ב-CSS, עיצוב רספונסיבי ו-UX/UI',
+            issuer: 'מכללה טכנולוגית',
+            date: '2025',
+            link: '#',
+            skills: ['CSS', 'Responsive Design', 'UX/UI']
+        },
+        {
+            id: 10,
+            title: 'Java Induction Certificate',
+            category: 'certificates',
+            type: 'certificate',
+            image: 'assets/images/Java.jpg',
+            description: 'הסמכה מקצועית ב-Java, פיתוח אפליקציות ו-API',
+            issuer: 'מכללה טכנולוגית',
+            date: '2025',
+            link: '#',
+            skills: ['Java', 'API Development', 'OOP']
+        },
+        {
+            id: 11,
+            title: 'TypeScript Basics Certificate',
+            category: 'certificates',
+            type: 'certificate',
+            image: 'assets/images/TypeScript.jpg',
+            description: 'הסמכה בסיסית ב-TypeScript, טיפוסי נתונים ופיתוח מודולרי',
+            issuer: 'מכללה טכנולוגית',
+            date: '2025',
+            link: '#',
+            skills: ['TypeScript', 'Data Types', 'Modular Development']
+        },
+        {
+          
+            id: 12,
+            title: 'Web Development Certificate',
+            category: 'certificates',
+            type: 'certificate',
+            image: 'assets/images/Html.jpg',
+            description: 'תעודת הסמכה בפיתוח אתרים - HTML, CSS, JavaScript וטכנולוגיות web מודרניות',
+            issuer: 'מכון טכנולוגי מתקדם',
+            date: '2024',
+            link: '#',
+            skills: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design']
+            
+        },
+        {
+            id: 13,
+            title: 'JavaScript Advanced Certificate',
+            category: 'certificates',
+            type: 'certificate',
+            image: 'assets/images/javaScript.jpg',
+            description: 'הסמכה מתקדמת ב-JavaScript, DOM manipulation ופיתוח אפליקציות אינטראקטיביות',
+            issuer: 'פלטפורמת קודינג מקוונת',
+            date: '2024',
+            link: '#',
+            skills: ['ES6+', 'DOM', 'APIs', 'Async Programming']
+        },
+        {
+            id: 14,
             title: 'Frontend Development Certificate',
             category: 'certificates',
             type: 'certificate',
@@ -386,6 +468,7 @@ const Portfolio = () => {
             link: '#',
             skills: ['Frontend', 'UX/UI', 'Mobile First', 'Accessibility']
         }
+
     ];
 
     const categories = [
@@ -528,11 +611,11 @@ const Portfolio = () => {
                 {/* סטטיסטיקות מעודכנות */}
                 <div className="portfolio-stats" data-aos="fade-up">
                     <div className="stat-item">
-                        <span className="stat-number">4</span>
+                        <span className="stat-number">5</span>
                         <span className="stat-label">פרוייקטים</span>
                     </div>
                     <div className="stat-item">
-                        <span className="stat-number">4</span>
+                        <span className="stat-number">8</span>
                         <span className="stat-label">תעודות הסמכה</span>
                     </div>
                     <div className="stat-item">
