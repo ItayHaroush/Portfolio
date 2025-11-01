@@ -1,4 +1,5 @@
 // import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react"
 // React Components for Modern Portfolio Landing Page
 
 // Main App Component
@@ -44,6 +45,7 @@ const App = () => {
 
     return (
         <div className="app">
+            <Analytics />
             <Header 
                 isMenuOpen={isMenuOpen}
                 setIsMenuOpen={setIsMenuOpen}
