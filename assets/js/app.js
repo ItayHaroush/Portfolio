@@ -82,7 +82,7 @@ const Header = ({ isMenuOpen, setIsMenuOpen, activeSection, scrollToSection }) =
             <nav className="navbar">
                 <div className="nav-brand" onClick={() => scrollToSection('home')}>
                     <i className='bx bx-code-alt'></i>
-                    <span>איתי הרוש</span>
+                    <span>איתי הרוש | Itay Solutions</span>
                 </div>
 
                 <div className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
@@ -185,7 +185,7 @@ const Hero = ({ scrollToSection }) => {
                             <div className="status-indicator"></div>
                         </div>
                         <div className="profile-info">
-                            <h3>איתי הרוש</h3>
+                            <h3>איתי הרוש | Itay Solutions</h3>
                             <p>Full Stack Developer</p>
                         </div>
                     </div>
@@ -196,6 +196,11 @@ const Hero = ({ scrollToSection }) => {
                             <div className="tech-item">JavaScript</div>
                             <div className="tech-item">PHP</div>
                             <div className="tech-item">MySQL</div>
+                            <div className="tech-item">Node.js</div>
+                            <div className="tech-item">HTML5</div>
+                            <div className="tech-item">CSS3</div>
+                            <div className="tech-item">SEO</div>
+                            <div className="tech-item">UI/UX</div>
                         </div>
                     </div>
                 </div>
@@ -318,7 +323,7 @@ const Portfolio = () => {
             category: 'applications',
             type: 'project',
             image: 'assets/images/ChefSyncIL.png',
-            description: 'אפליקציה לניהול מתכונים ושיתוף עם שפים אחרים',
+            description: 'אפליקציה לניהול הזמנות ושירותי מטבח מקצועיים בישראל',
             technologies: ['React', 'Node.js', 'API Development'],
             link: 'https://tefenorders.great-site.net/landingPage.php?i=1',
             github: '#',
@@ -349,7 +354,7 @@ const Portfolio = () => {
             category: 'websites',
             type: 'project',
             image: 'assets/images/fulllogo_nobuffer.jpeg',
-            description: 'אתר אינטרנט עבור Bina Bnya, כולל עיצוב מודרני ופונקציות מתקדמות.',
+            description: 'אתר תדמית לעסק בניה ובנייה עם עיצוב מודרני ותגובותי.',
             technologies: ['HTML5', 'React', 'Node.js', 'CSS3', 'JavaScript'],
             link: 'https://www-hzh6.vercel.app/',
             github: '#',
@@ -610,7 +615,7 @@ const Portfolio = () => {
                 {/* סטטיסטיקות מעודכנות */}
                 <div className="portfolio-stats" data-aos="fade-up">
                     <div className="stat-item">
-                        <span className="stat-number">6</span>
+                        <span className="stat-number">7</span>
                         <span className="stat-label">פרוייקטים</span>
                     </div>
                     <div className="stat-item">
@@ -926,16 +931,32 @@ const Footer = () => {
             <div className="container">
                 <div className="footer-content">
                     <div className="footer-brand">
-                        <h3>איתי הרוש</h3>
+                        <h3>איתי הרוש | Itay Solutions</h3>
                         <p>פתרונות פיתוח דיגיטליים מתקדמים</p>
                     </div>
                     
+                    <div className="footer-google-section">
+                        <div className="google-review-card">
+                            <div className="google-icon">
+                                <i className='bx bxl-google'></i>
+                            </div>
+                            <div className="google-content">
+                                <h4>⭐ אהבתם? תנו כוכב!</h4>
+                                <p>דרגו אותנו בגוגל בקלי קלות</p>
+                                <a href="https://share.google/veRJmLN9PbwB475UZ" target="_blank" rel="noopener noreferrer" className="google-link">
+                                    צפו בביקורות ודירוגים
+                                    <i className='bx bx-link-external'></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                     <div className="footer-links">
                         <a href="#home">בית</a>
                         <a href="#services">שירותים</a>
                         <a href="#portfolio">פרוייקטים</a>
                         <a href="#contact">צור קשר</a>
                     </div>
+                    
                 </div>
                 
                 <div className="footer-bottom">
