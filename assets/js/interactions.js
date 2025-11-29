@@ -25,25 +25,25 @@ const observeElements = () => {
 const createTypingEffect = () => {
     const texts = [
         'פתרונות פיתוח מתקדמים',
-        'אתרים רספונסיביים', 
+        'אתרים רספונסיביים',
         'אפליקציות מותאמות אישית',
         'חוויות דיגיטליות מרשימות'
     ];
-    
+
     let textIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
-    
+
     const typingElement = document.querySelector('.text-cycle');
     if (!typingElement) return;
-    
+
     const typeSpeed = 100;
     const deleteSpeed = 50;
     const pauseTime = 2000;
-    
+
     function type() {
         const currentText = texts[textIndex];
-        
+
         if (isDeleting) {
             typingElement.textContent = currentText.substring(0, charIndex - 1);
             charIndex--;
@@ -51,9 +51,9 @@ const createTypingEffect = () => {
             typingElement.textContent = currentText.substring(0, charIndex + 1);
             charIndex++;
         }
-        
+
         let speed = isDeleting ? deleteSpeed : typeSpeed;
-        
+
         if (!isDeleting && charIndex === currentText.length) {
             speed = pauseTime;
             isDeleting = true;
@@ -61,10 +61,10 @@ const createTypingEffect = () => {
             isDeleting = false;
             textIndex = (textIndex + 1) % texts.length;
         }
-        
+
         setTimeout(type, speed);
     }
-    
+
     type();
 };
 
@@ -90,11 +90,11 @@ const initSmoothScrolling = () => {
 const initParallaxEffect = () => {
     const hero = document.querySelector('.hero');
     if (!hero) return;
-    
+
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
         const parallaxElements = hero.querySelectorAll('.tech-item');
-        
+
         parallaxElements.forEach((el, index) => {
             const speed = 0.5 + (index * 0.2);
             el.style.transform = `translateY(${scrolled * speed}px)`;
@@ -106,16 +106,16 @@ const initParallaxEffect = () => {
 const initLoadingAnimation = () => {
     window.addEventListener('load', () => {
         document.body.classList.add('loaded');
-        
+
         // Animate elements on load
         const animateOnLoad = [
             '.hero-text h1',
-            '.hero-text h2', 
+            '.hero-text h2',
             '.hero-text p',
             '.hero-buttons',
             '.profile-card'
         ];
-        
+
         animateOnLoad.forEach((selector, index) => {
             const element = document.querySelector(selector);
             if (element) {
@@ -140,34 +140,34 @@ const enhancePortfolioFiltering = () => {
 const enhanceContactForm = () => {
     const form = document.querySelector('.contact-form');
     if (!form) return;
-    
+
     const inputs = form.querySelectorAll('input, textarea');
-    
+
     // Add floating labels effect
     inputs.forEach(input => {
         input.addEventListener('focus', () => {
             input.parentElement.classList.add('focused');
         });
-        
+
         input.addEventListener('blur', () => {
             if (!input.value) {
                 input.parentElement.classList.remove('focused');
             }
         });
-        
+
         // Check if input has value on load
         if (input.value) {
             input.parentElement.classList.add('focused');
         }
     });
-    
+
     // Form validation
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-        
+
         let isValid = true;
         const formData = new FormData(form);
-        
+
         // Validate required fields
         inputs.forEach(input => {
             if (input.hasAttribute('required') && !input.value.trim()) {
@@ -178,7 +178,7 @@ const enhanceContactForm = () => {
                 input.classList.remove('error');
             }
         });
-        
+
         // Validate email
         const email = form.querySelector('input[type="email"]');
         if (email && email.value) {
@@ -188,19 +188,19 @@ const enhanceContactForm = () => {
                 email.classList.add('error');
             }
         }
-        
+
         if (isValid) {
             // Simulate form submission
             const submitBtn = form.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
-            
+
             submitBtn.innerHTML = '<i class="bx bx-loader-alt bx-spin"></i> שולח...';
             submitBtn.disabled = true;
-            
+
             setTimeout(() => {
                 submitBtn.innerHTML = '<i class="bx bx-check"></i> נשלח בהצלחה!';
                 submitBtn.style.background = 'var(--accent-color)';
-                
+
                 setTimeout(() => {
                     submitBtn.innerHTML = originalText;
                     submitBtn.disabled = false;
@@ -215,18 +215,18 @@ const enhanceContactForm = () => {
 // Stats counter animation
 const animateStats = () => {
     const stats = document.querySelectorAll('.stat-number');
-    
+
     const countUp = (element, target) => {
         const increment = target / 100;
         let current = 0;
-        
+
         const timer = setInterval(() => {
             current += increment;
             if (current >= target) {
                 current = target;
                 clearInterval(timer);
             }
-            
+
             if (target > 50) {
                 element.textContent = Math.floor(current) + '+';
             } else if (target === 100) {
@@ -236,7 +236,7 @@ const animateStats = () => {
             }
         }, 50);
     };
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -246,7 +246,7 @@ const animateStats = () => {
             }
         });
     });
-    
+
     stats.forEach(stat => observer.observe(stat));
 };
 
@@ -255,9 +255,9 @@ const enhanceMobileMenu = () => {
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
-    
+
     if (!menuToggle || !navMenu) return;
-    
+
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
         if (!menuToggle.contains(e.target) && !navMenu.contains(e.target)) {
@@ -265,7 +265,7 @@ const enhanceMobileMenu = () => {
             navMenu.classList.remove('active');
         }
     });
-    
+
     // Close menu when clicking on nav links
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
@@ -279,25 +279,25 @@ const enhanceMobileMenu = () => {
 const initThemeSwitcher = () => {
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const currentTheme = localStorage.getItem('theme') || (prefersDark ? 'dark' : 'light');
-    
+
     document.documentElement.setAttribute('data-theme', currentTheme);
-    
+
     // Create theme toggle button (if you want to add one later)
     const createThemeToggle = () => {
         const toggle = document.createElement('button');
         toggle.className = 'theme-toggle';
         toggle.innerHTML = currentTheme === 'dark' ? '☀️' : '🌙';
         toggle.setAttribute('aria-label', 'Toggle theme');
-        
+
         toggle.addEventListener('click', () => {
             const current = document.documentElement.getAttribute('data-theme');
             const newTheme = current === 'dark' ? 'light' : 'dark';
-            
+
             document.documentElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
             toggle.innerHTML = newTheme === 'dark' ? '☀️' : '🌙';
         });
-        
+
         return toggle;
     };
 };
@@ -316,9 +316,9 @@ const initPreloader = () => {
             <p>טוען...</p>
         </div>
     `;
-    
+
     document.body.appendChild(preloader);
-    
+
     window.addEventListener('load', () => {
         setTimeout(() => {
             preloader.style.opacity = '0';
@@ -335,7 +335,7 @@ document.addEventListener('DOMContentLoaded', () => {
     observeElements();
     initSmoothScrolling();
     enhanceMobileMenu();
-    
+
     // Enhanced features
     setTimeout(() => {
         createTypingEffect();
