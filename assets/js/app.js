@@ -338,7 +338,7 @@ const Portfolio = () => {
         {
             id: 4,
             title: 'React Portfolio',
-            category: 'websites , applications',
+            category: 'websites',
             type: 'project',
             image: 'assets/images/logo.jpeg',
             description: 'פורטפוליו מתקדם זה עם React, אנימציות ועיצוב responsive מודרני.',
@@ -353,7 +353,7 @@ const Portfolio = () => {
         {
             id: 5,
             title: 'Itay ContactApp ',
-            category: 'websites , applications',
+            category: 'websites',
             type: 'project',
             image: 'assets/images/logoContactApp.png',
             description: 'אפליקציית אנשי קשר אישית עם עיצוב מודרני סטייל WhatsApp ותגובותי.',
