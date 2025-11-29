@@ -15,7 +15,7 @@ const App = () => {
 
         // Handle scroll for active section
         const handleScroll = () => {
-            const sections = ['home', 'services', 'portfolio', 'contact'];
+            const sections = ['home', 'services', 'portfolio', 'pricing', 'contact'];
             const currentSection = sections.find(section => {
                 const element = document.getElementById(section);
                 if (element) {
@@ -52,6 +52,7 @@ const App = () => {
             <Hero scrollToSection={scrollToSection} />
             <Services />
             <Portfolio />
+            <PricingQuote />
             <Contact />
             <Footer />
         </div>
@@ -74,6 +75,7 @@ const Header = ({ isMenuOpen, setIsMenuOpen, activeSection, scrollToSection }) =
         { id: 'home', label: 'בית', icon: 'bx-home' },
         { id: 'services', label: 'שירותים', icon: 'bx-briefcase' },
         { id: 'portfolio', label: 'פרוייקטים', icon: 'bx-folder' },
+        { id: 'pricing', label: 'הצעת מחיר', icon: 'bx-calculator' },
         { id: 'contact', label: 'צור קשר', icon: 'bx-message' }
     ];
 
@@ -147,7 +149,7 @@ const Hero = ({ scrollToSection }) => {
 
                     <div className="hero-stats">
                         <div className="stat-item" data-aos="fade-up" data-aos-delay="200">
-                            <span className="stat-number">7+</span>
+                            <span className="stat-number">8+</span>
                             <span className="stat-label">פרוייקטים</span>
                         </div>
                         <div className="stat-item" data-aos="fade-up" data-aos-delay="300">
@@ -627,7 +629,7 @@ const Portfolio = () => {
                 {/* סטטיסטיקות מעודכנות */}
                 <div className="portfolio-stats" data-aos="fade-up">
                     <div className="stat-item">
-                        <span className="stat-number">7</span>
+                        <span className="stat-number">8</span>
                         <span className="stat-label">פרוייקטים</span>
                     </div>
                     <div className="stat-item">
@@ -635,7 +637,7 @@ const Portfolio = () => {
                         <span className="stat-label">תעודות הסמכה</span>
                     </div>
                     <div className="stat-item">
-                        <span className="stat-number">4</span>
+                        <span className="stat-number">5</span>
                         <span className="stat-label">פרוייקטים פעילים</span>
                     </div>
                     <div className="stat-item">
@@ -643,6 +645,339 @@ const Portfolio = () => {
                         <span className="stat-label">מחויבות ללמידה</span>
                     </div>
                 </div>
+            </div>
+        </section>
+    );
+};
+
+// Pricing Quote Section Component
+const PricingQuote = () => {
+    const [selectedTrack, setSelectedTrack] = React.useState(null);
+    const [showFactoryQuote, setShowFactoryQuote] = React.useState(false);
+
+    const tracks = [
+        {
+            id: 'machines',
+            icon: 'bx-cog',
+            title: '⚙️ מערכת ניהול מכונות',
+            description: 'מערכת MVP לניהול מצב מכונות - פשוטה ונוחה',
+            features: ['ניהול סטטוס מכונות', 'מעבר בין חוץ/סניפים', 'לוג פעולות מלא', 'ממשק עברי נגיש'],
+            available: true,
+            highlight: true
+        },
+        {
+            id: 'ecommerce',
+            icon: 'bx-store',
+            title: '🛒 חנות אונליין',
+            description: 'פלטפורמת מכירה מקוונת מתקדמת',
+            features: ['עגלת קניות', 'תשלומים מאובטחים', 'ניהול מלאי', 'מערכת CRM'],
+            available: false
+        },
+        {
+            id: 'business',
+            icon: 'bx-briefcase',
+            title: '💼 אתר עסקי',
+            description: 'אתר תדמית מקצועי לעסקים',
+            features: ['עיצוב מותאם', 'SEO מתקדם', 'ממשק ניהול', 'אנליטיקה'],
+            available: false
+        },
+        {
+            id: 'custom',
+            icon: 'bx-customize',
+            title: '⚙️ פתרון מותאם',
+            description: 'פיתוח מערכת בהתאמה אישית מלאה',
+            features: ['ייעוץ ותכנון', 'פיתוח מותאם', 'אינטגרציות', 'תמיכה מלאה'],
+            available: false
+        }
+    ];
+
+    const machinesQuoteDetails = {
+        title: 'מערכת ניהול מכונות (MVP)',
+        subtitle: 'מערכת נוחה ופשוטה שמרכזת את כל מצב המכונות במקום אחד',
+        totalPrice: '8,000',
+        timeline: '100 שעות עבודה',
+        modules: [
+            {
+                name: 'דשבורד ניהול מכונות',
+                description: 'מסך ראשי עם רשימת כל המכונות לפי מיקום',
+                price: 'כלול',
+                features: [
+                    'תצוגה מרכזית של כל המכונות',
+                    'חלוקה לפי חוץ/סניף צפון/סניף דרום',
+                    'גרירה בין אזורים (Drag & Drop)',
+                    'סטטוסי צבע: ירוק/כחול/צהוב/אדום',
+                    'חיפוש וסינון מהיר'
+                ]
+            },
+            {
+                name: 'דף פירוט מכונה',
+                description: 'דף ייעודי לכל מכונה עם כל המידע והפעולות',
+                price: 'כלול',
+                features: [
+                    'פרטי מכונה מלאים',
+                    'היסטוריית מעברים ושינויים',
+                    'הוספת הערות לפי משתמש + תאריך',
+                    'טבלת הערות עם גיבוי מלא',
+                    'סל מחזור לשחזור'
+                ]
+            },
+            {
+                name: 'ניהול סטטוסים',
+                description: 'מערכת צבעים אינטואיטיבית למעקב מצב המכונות',
+                price: 'כלול',
+                features: [
+                    '🟢 ירוק - מושכר ותקין',
+                    '🔵 כחול - בהמתנה',
+                    '🟡 צהוב - הסתיים זמן השכרה',
+                    '🔴 אדום - מקולקל',
+                    'עדכון סטטוס מהיר בלחיצה'
+                ]
+            },
+            {
+                name: 'מערכת התחברות מאובטחת',
+                description: 'אבטחת מידע וניהול הרשאות משתמשים',
+                price: 'כלול',
+                features: [
+                    'התחברות מאובטחת למשתמשים',
+                    'ניהול הרשאות למשתמשים',
+                    'לוג פעולות מלא למעקב',
+                    'הצפנת נתונים רגישים',
+                    'גיבוי אוטומטי של DB'
+                ]
+            },
+            {
+                name: 'ממשק רספונסיבי',
+                description: 'תמיכה מלאה במובייל וטאבלט',
+                price: 'כלול',
+                features: [
+                    'ממשק עברי נקי ונגיש',
+                    'התאמה לכל גודל מסך',
+                    'תמיכה בטאבלט ומובייל',
+                    'עיצוב UI/UX מודרני',
+                    'חוויית משתמש מהירה'
+                ]
+            }
+        ],
+        additionalServices: [
+            { name: '🎯 מסלול חודשי', description: '500 ₪/חודש - תחזוקה מלאה + אחסון', included: false },
+            { name: '📅 מסלול שנתי', description: '5,000 ₪/שנה - חיסכון של חודש', included: false },
+            { name: '⚡ תשלום לפי משימה', description: '100-150 ₪/שעה - רק כשצריך', included: false },
+            { name: '🌐 ניהול דומיין ואחסון', description: 'כלול במסלול חודשי/שנתי', included: true }
+        ],
+        maintenanceOptions: [
+            {
+                name: 'מסלול חודשי - 500 ₪',
+                features: [
+                    'עדכונים שוטפים',
+                    'תיקוני באגים',
+                    'גיבויי DB',
+                    'שדרוגי אבטחה',
+                    'ניהול אחסון/שרת/דומיין - כלול'
+                ]
+            },
+            {
+                name: 'מסלול שנתי - 5,000 ₪',
+                features: [
+                    'כל היתרונות של המסלול החודשי',
+                    'חיסכון של חודש תחזוקה',
+                    'עדיפות בתמיכה',
+                    'פגישת ביקורת שנתית',
+                    'תכנון שדרוגים עתידיים'
+                ]
+            },
+            {
+                name: 'מסלול לפי משימה (Pay-Per-Task)',
+                features: [
+                    'תשלום רק כשצריך שינוי/תיקון',
+                    'תמחור לפי שעה: 100-150 ₪',
+                    'אחסון/דומיין - באחריות הלקוח',
+                    'ללא מחויבות חודשית',
+                    'גמישות מקסימלית'
+                ]
+            }
+        ],
+        paymentTerms: [
+            '25% מקדמה בחתימה (₪2,000)',
+            'יתרה: עד 3 תשלומים לפי התקדמות',
+            'תשלום סופי עם מסירת המערכת'
+        ]
+    };
+
+    return (
+        <section id="pricing" className="pricing-quote">
+            <div className="container">
+                <div className="section-header" data-aos="fade-up">
+                    <span className="section-subtitle">💰 הצעות מחיר</span>
+                    <h2 className="section-title">בחרו את המסלול המתאים לכם</h2>
+                    <p className="section-description">
+                        הצעות מחיר שקופות ומפורטות - קבלו דוגמא מקצועית והבינו בדיוק מה אתם מקבלים
+                    </p>
+                </div>
+
+                {/* בחירת מסלול */}
+                <div className="tracks-grid" data-aos="fade-up" data-aos-delay="100">
+                    {tracks.map((track, index) => (
+                        <div
+                            key={track.id}
+                            className={`track-card ${selectedTrack === track.id ? 'selected' : ''} ${track.highlight ? 'highlight' : ''} ${!track.available ? 'disabled' : ''}`}
+                            onClick={() => track.available && setSelectedTrack(track.id)}
+                            data-aos="zoom-in"
+                            data-aos-delay={index * 100}
+                        >
+                            {track.highlight && <span className="badge-hot">🔥 דוגמא זמינה</span>}
+                            {!track.available && <span className="badge-soon">בקרוב</span>}
+
+                            <div className="track-icon">
+                                <i className={`bx ${track.icon}`}></i>
+                            </div>
+                            <h3>{track.title}</h3>
+                            <p>{track.description}</p>
+
+                            <ul className="track-features">
+                                {track.features.map((feature, i) => (
+                                    <li key={i}>
+                                        <i className='bx bx-check-circle'></i>
+                                        {feature}
+                                    </li>
+                                ))}
+                            </ul>
+
+                            {track.available ? (
+                                <button className="btn-track">
+                                    <i className='bx bx-show'></i>
+                                    צפו בהצעה
+                                </button>
+                            ) : (
+                                <button className="btn-track disabled">
+                                    <i className='bx bx-lock'></i>
+                                    בקרוב
+                                </button>
+                            )}
+                        </div>
+                    ))}
+                </div>
+
+                {/* הצעת מחיר מפורטת למערכת מכונות */}
+                {selectedTrack === 'machines' && (
+                    <div className="quote-details" data-aos="fade-up">
+                        <div className="quote-header">
+                            <div className="quote-title-section">
+                                <h3>{machinesQuoteDetails.title}</h3>
+                                <p>{machinesQuoteDetails.subtitle}</p>
+                            </div>
+                            <div className="quote-summary">
+                                <div className="summary-item">
+                                    <span className="label">💰 מחיר כולל</span>
+                                    <span className="value">₪{machinesQuoteDetails.totalPrice}</span>
+                                </div>
+                                <div className="summary-item">
+                                    <span className="label">⏱️ זמן פיתוח</span>
+                                    <span className="value">{machinesQuoteDetails.timeline}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="quote-modules">
+                            <h4>⚙️ פיצ'רים מרכזיים - כולם כלולים במחיר!</h4>
+                            {machinesQuoteDetails.modules.map((module, index) => (
+                                <div key={index} className="module-card" data-aos="fade-right" data-aos-delay={index * 50}>
+                                    <div className="module-header">
+                                        <div>
+                                            <h5>{module.name}</h5>
+                                            <p>{module.description}</p>
+                                        </div>
+                                        <div className="module-price">₪{module.price}</div>
+                                    </div>
+                                    <ul className="module-features">
+                                        {module.features.map((feature, i) => (
+                                            <li key={i}>
+                                                <i className='bx bx-check'></i>
+                                                {feature}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            ))}
+                        </div>
+
+                        <div className="quote-additional">
+                            <h4>🔧 מסלולי תחזוקה - בחרו את המתאים לכם</h4>
+                            <div className="maintenance-options">
+                                {machinesQuoteDetails.maintenanceOptions.map((option, index) => (
+                                    <div key={index} className="maintenance-card" data-aos="fade-up" data-aos-delay={index * 100}>
+                                        <h5>{option.name}</h5>
+                                        <ul>
+                                            {option.features.map((feature, i) => (
+                                                <li key={i}>
+                                                    <i className='bx bx-check'></i>
+                                                    {feature}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                ))}
+                            </div>
+
+                            <div className="hosting-info" style={{ marginTop: 'var(--spacing-xl)', padding: 'var(--spacing-lg)', background: '#f0f9ff', borderRadius: 'var(--border-radius-lg)', borderRight: '4px solid var(--primary-color)' }}>
+                                <h5 style={{ color: '#1f2937', marginBottom: 'var(--spacing-sm)' }}>🌐 נספח - דומיין ואחסון</h5>
+                                <ul style={{ listStyle: 'none', padding: 0 }}>
+                                    <li style={{ marginBottom: 'var(--spacing-xs)', color: '#4b5563' }}><strong>דומיין:</strong> 20-50 ₪ לשנה (בעלות הלקוח)</li>
+                                    <li style={{ marginBottom: 'var(--spacing-xs)', color: '#4b5563' }}><strong>אחסון Shared:</strong> 30-70 ₪ לחודש (מספיק למערכת)</li>
+                                    <li style={{ marginBottom: 'var(--spacing-xs)', color: '#4b5563' }}><strong>אחסון VPS:</strong> 80-200 ₪ לחודש (ביצועים גבוהים)</li>
+                                    <li style={{ color: '#6366f1', fontWeight: 'bold' }}>💡 במסלול חודשי/שנתי - ניהול מלא כלול!</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div className="quote-payment">
+                            <h4>💳 תנאי תשלום</h4>
+                            <div className="payment-terms">
+                                {machinesQuoteDetails.paymentTerms.map((term, index) => (
+                                    <div key={index} className="payment-step">
+                                        <span className="step-number">{index + 1}</span>
+                                        <span>{term}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className="quote-actions">
+                            <a href="#contact" className="btn btn-primary btn-large">
+                                <i className='bx bx-message-detail'></i>
+                                מעוניין? בואו נדבר
+                            </a>
+                            <a href="assets/docs/machines-quote.pdf" download="הצעת-מחיר-מערכת-ניהול-מכונות.pdf" className="btn btn-secondary btn-large">
+                                <i className='bx bx-download'></i>
+                                הורד הצעה PDF
+                            </a>
+                        </div>
+
+                        <div className="quote-note">
+                            <i className='bx bx-info-circle'></i>
+                            <p>
+                                <strong>לתשומת לבכם:</strong> הצעת מחיר זו מבוססת על פרוייקט MVP אמיתי ללקוח מעפולה עלית.
+                                זמן הפיתוח המשוער: כ-100 שעות (Frontend + Backend + Mobile + בדיקות).
+                                ניתן להתאים את ההצעה בהתאם לצרכים הספציפיים שלכם - צרו קשר לפרטים!
+                            </p>
+                        </div>
+                    </div>
+                )}
+
+                {/* הודעה למסלולים שעדיין לא זמינים */}
+                {selectedTrack && selectedTrack !== 'machines' && (
+                    <div className="coming-soon-message" data-aos="fade-up">
+                        <div className="coming-soon-content">
+                            <i className='bx bx-time-five'></i>
+                            <h3>בקרוב - הצעת מחיר מפורטת</h3>
+                            <p>אנחנו עובדים על הכנת הצעת מחיר מקצועית עבור מסלול זה.</p>
+                            <p>בינתיים, אתם מוזמנים ליצור איתנו קשר לקבלת הצעה מותאמת אישית!</p>
+                            <a href="#contact" className="btn btn-primary">
+                                <i className='bx bx-phone'></i>
+                                דברו איתנו
+                            </a>
+                        </div>
+                    </div>
+                )}
             </div>
         </section>
     );
