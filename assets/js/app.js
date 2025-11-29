@@ -807,7 +807,7 @@ const PricingQuote = () => {
         <section id="pricing" className="pricing-quote">
             <div className="container">
                 <div className="section-header" data-aos="fade-up">
-                    <span className="section-subtitle">💰 הצעות מחיר</span>
+                    <span className="section-subtitle">הצעות מחיר</span>
                     <h2 className="section-title">בחרו את המסלול המתאים לכם</h2>
                     <p className="section-description">
                         הצעות מחיר שקופות ומפורטות - קבלו דוגמא מקצועית והבינו בדיוק מה אתם מקבלים
@@ -823,6 +823,7 @@ const PricingQuote = () => {
                             onClick={() => track.available && setSelectedTrack(track.id)}
                             data-aos="zoom-in"
                             data-aos-delay={index * 100}
+                            style={track.highlight ? { backgroundColor: '#ffffff' } : {}}
                         >
                             {track.highlight && <span className="badge-hot">🔥 דוגמא זמינה</span>}
                             {!track.available && <span className="badge-soon">בקרוב</span>}
@@ -830,12 +831,12 @@ const PricingQuote = () => {
                             <div className="track-icon">
                                 <i className={`bx ${track.icon}`}></i>
                             </div>
-                            <h3>{track.title}</h3>
-                            <p>{track.description}</p>
+                            <h3 style={track.highlight ? { color: '#1f2937', fontWeight: '700' } : {}}>{track.title}</h3>
+                            <p style={track.highlight ? { color: '#4b5563' } : {}}>{track.description}</p>
 
                             <ul className="track-features">
                                 {track.features.map((feature, i) => (
-                                    <li key={i}>
+                                    <li key={i} style={track.highlight ? { color: '#4b5563' } : {}}>
                                         <i className='bx bx-check-circle'></i>
                                         {feature}
                                     </li>
@@ -1301,6 +1302,7 @@ const Footer = () => {
                         <a href="#home">בית</a>
                         <a href="#services">שירותים</a>
                         <a href="#portfolio">פרוייקטים</a>
+                        <a href="#pricing">הצעות מחיר</a>
                         <a href="#contact">צור קשר</a>
                     </div>
 

@@ -63,6 +63,62 @@
     --border-color: #374151;
 }
 
+/* Dark mode specific adjustments for pricing section */
+[data-theme="dark"] .pricing-quote {
+    background: #0f172a;
+}
+
+[data-theme="dark"] .track-card {
+    background: #1e293b;
+    border-color: #334155;
+}
+
+[data-theme="dark"] .track-card h3 {
+    color: #f9fafb;
+}
+
+[data-theme="dark"] .track-card > p {
+    color: #d1d5db;
+}
+
+[data-theme="dark"] .track-features li {
+    color: #d1d5db;
+}
+
+[data-theme="dark"] .track-card:hover,
+[data-theme="dark"] .track-card.selected {
+    border-color: var(--primary-color);
+    background: #1e293b;
+}
+
+[data-theme="dark"] .quote-details {
+    background: #1e293b;
+    border-color: #334155;
+}
+
+[data-theme="dark"] .module-card {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(245, 158, 11, 0.03) 100%);
+    border-color: #334155;
+}
+
+[data-theme="dark"] .maintenance-card {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(245, 158, 11, 0.03) 100%);
+    border-color: #334155;
+}
+
+[data-theme="dark"] .hosting-info {
+    background: rgba(99, 102, 241, 0.1);
+    border-color: var(--primary-color);
+}
+
+[data-theme="dark"] .payment-step {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(245, 158, 11, 0.04) 100%);
+}
+
+[data-theme="dark"] .quote-note {
+    background: rgba(245, 158, 11, 0.15);
+}
+
 /* Base HTML and Body */
 html {
     scroll-behavior: smooth;
@@ -143,6 +199,18 @@ p {
     color: white;
 }
 
+/* Dark mode button adjustments */
+[data-theme="dark"] .btn-secondary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    background: rgba(99, 102, 241, 0.1);
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
 .btn-full {
     width: 100%;
     justify-content: center;
@@ -164,6 +232,16 @@ p {
 .header.scrolled {
     background: rgba(255, 255, 255, 0.98);
     box-shadow: var(--shadow-lg);
+}
+
+/* Dark mode header */
+[data-theme="dark"] .header {
+    background: rgba(17, 24, 39, 0.95);
+    border-bottom-color: #374151;
+}
+
+[data-theme="dark"] .header.scrolled {
+    background: rgba(17, 24, 39, 0.98);
 }
 
 .navbar {
@@ -287,7 +365,8 @@ p {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.highlight {
+/* Hero section highlight text only */
+.hero .highlight {
     background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -1116,25 +1195,6 @@ p {
     padding: var(--spacing-3xl) 0;
     background: var(--bg-secondary);
     position: relative;
-    /* Local light palette override to ensure readability even in dark mode */
-    --pricing-bg-card: #ffffff;
-    --pricing-text-heading: #111827;
-    --pricing-text-body: #374151;
-    --pricing-text-muted: #4b5563;
-    --pricing-border: #e5e7eb;
-}
-
-/* Force light theme for pricing section headers */
-.pricing-quote .section-subtitle {
-    color: #6366f1 !important;
-}
-
-.pricing-quote .section-title {
-    color: #1f2937 !important;
-}
-
-.pricing-quote .section-description {
-    color: #6b7280 !important;
 }
 
 
@@ -1147,15 +1207,15 @@ p {
 }
 
 .pricing-quote .track-card {
-    background: var(--pricing-bg-card) !important;
-    border: 2px solid var(--pricing-border);
+    background: var(--bg-card);
+    border: 2px solid var(--border-color);
     border-radius: var(--border-radius-xl);
     padding: var(--spacing-xl);
     transition: all var(--transition-normal);
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    color: var(--pricing-text-body);
+    color: var(--text-primary);
 }
 
 .track-card::before {
@@ -1185,11 +1245,54 @@ p {
 .track-card.selected {
     border-color: var(--primary-color);
     box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.03) 0%, rgba(245, 158, 11, 0.02) 100%);
+}
+
+/* Light mode selected card background */
+.track-card.selected {
+    background: var(--bg-card);
+}
+
+/* Dark mode - ensure selected card stays visible */
+[data-theme="dark"] .track-card.selected {
+    background: #1e293b;
+    border-color: var(--primary-color);
 }
 
 .track-card.highlight {
     border-color: var(--secondary-color);
+    -webkit-text-fill-color: initial;
+    background-clip: border-box;
+}
+
+/* Ensure highlight card text is visible in both modes */
+.track-card.highlight h3 {
+    color: #1f2937 !important;
+    -webkit-text-fill-color: #1f2937 !important;
+}
+
+.track-card.highlight > p {
+    color: #4b5563 !important;
+    -webkit-text-fill-color: #4b5563 !important;
+}
+
+.track-card.highlight .track-features li {
+    color: #4b5563 !important;
+    -webkit-text-fill-color: #4b5563 !important;
+}
+
+[data-theme="dark"] .track-card.highlight h3 {
+    color: #f9fafb !important;
+    -webkit-text-fill-color: #f9fafb !important;
+}
+
+[data-theme="dark"] .track-card.highlight > p {
+    color: #d1d5db !important;
+    -webkit-text-fill-color: #d1d5db !important;
+}
+
+[data-theme="dark"] .track-card.highlight .track-features li {
+    color: #d1d5db !important;
+    -webkit-text-fill-color: #d1d5db !important;
 }
 
 .track-card.disabled {
@@ -1216,6 +1319,7 @@ p {
     font-weight: 600;
     box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
     animation: pulse 2s infinite;
+    z-index: 3;
 }
 
 .badge-soon {
@@ -1228,6 +1332,7 @@ p {
     border-radius: var(--border-radius-full);
     font-size: 0.75rem;
     font-weight: 600;
+    z-index: 3;
 }
 
 @keyframes pulse {
@@ -1246,6 +1351,8 @@ p {
     justify-content: center;
     margin-bottom: var(--spacing-lg);
     transition: all var(--transition-normal);
+    position: relative;
+    z-index: 2;
 }
 
 .track-card:hover .track-icon {
@@ -1270,34 +1377,43 @@ p {
 .pricing-quote .track-card h3 {
     font-size: 1.25rem;
     margin-bottom: var(--spacing-sm);
-    color: var(--pricing-text-heading) !important;
+    color: #1f2937;
     font-weight: 700;
+    position: relative;
+    z-index: 2;
 }
 
 .pricing-quote .track-card > p {
-    color: var(--pricing-text-muted) !important;
+    color: #4b5563;
     margin-bottom: var(--spacing-lg);
     line-height: 1.55;
+    position: relative;
+    z-index: 2;
 }
 
 /* Track Features */
 .track-features {
     list-style: none;
     margin-bottom: var(--spacing-lg);
+    position: relative;
+    z-index: 2;
 }
 
 .pricing-quote .track-features li {
     display: flex;
     align-items: center;
     gap: var(--spacing-sm);
-    color: var(--pricing-text-muted) !important;
+    color: #4b5563;
     margin-bottom: var(--spacing-sm);
     font-size: 0.95rem;
+    position: relative;
+    z-index: 2;
 }
 
 .track-features i {
     color: var(--accent-color);
     font-size: 1.2rem;
+    flex-shrink: 0;
 }
 
 /* Track Button */
@@ -1316,6 +1432,8 @@ p {
     justify-content: center;
     gap: var(--spacing-sm);
     transition: all var(--transition-normal);
+    position: relative;
+    z-index: 2;
 }
 
 .btn-track:hover {
@@ -1356,13 +1474,13 @@ p {
 
 .quote-title-section h3 {
     font-size: 2rem;
-    color: #6366f1 !important;
+    color: var(--primary-color);
     margin-bottom: var(--spacing-sm);
-    font-weight: 700 !important;
+    font-weight: 700;
 }
 
 .quote-title-section p {
-    color: #4b5563 !important;
+    color: var(--text-secondary);
     font-size: 1.1rem;
 }
 
@@ -1380,14 +1498,14 @@ p {
 
 .summary-item .label {
     font-size: 0.9rem;
-    color: #6b7280 !important;
+    color: var(--text-secondary);
     margin-bottom: var(--spacing-xs);
 }
 
 .summary-item .value {
     font-size: 1.75rem;
     font-weight: 700;
-    color: #6366f1 !important;
+    color: var(--primary-color);
 }
 
 /* Quote Modules */
@@ -1400,8 +1518,8 @@ p {
 .quote-payment h4 {
     font-size: 1.5rem;
     margin-bottom: var(--spacing-lg);
-    color: #1f2937 !important;
-    font-weight: 700 !important;
+    color: var(--text-primary);
+    font-weight: 700;
 }
 
 .module-card {
@@ -1429,13 +1547,13 @@ p {
 
 .module-header h5 {
     font-size: 1.2rem;
-    color: #6366f1 !important;
+    color: var(--primary-color);
     margin-bottom: var(--spacing-xs);
-    font-weight: 700 !important;
+    font-weight: 700;
 }
 
 .module-header p {
-    color: #4b5563 !important;
+    color: var(--text-secondary);
     font-size: 0.95rem;
 }
 
@@ -1454,10 +1572,10 @@ p {
     display: flex;
     align-items: center;
     gap: var(--spacing-sm);
-    color: #4b5563 !important;
+    color: var(--text-secondary);
     margin-bottom: var(--spacing-sm);
     padding-right: var(--spacing-md);
-    font-size: 0.95rem !important;
+    font-size: 0.95rem;
 }
 
 .module-features i {
@@ -1505,7 +1623,7 @@ p {
 
 .maintenance-card h5 {
     font-size: 1.2rem;
-    color: #1f2937 !important;
+    color: var(--text-primary);
     margin-bottom: var(--spacing-md);
     font-weight: 700;
     padding-bottom: var(--spacing-sm);
@@ -1521,7 +1639,7 @@ p {
     display: flex;
     align-items: flex-start;
     gap: var(--spacing-sm);
-    color: #4b5563 !important;
+    color: var(--text-secondary);
     margin-bottom: var(--spacing-sm);
     font-size: 0.95rem;
 }
@@ -1541,7 +1659,7 @@ p {
 }
 
 .hosting-info h5 {
-    color: #1f2937 !important;
+    color: var(--text-primary);
     margin-bottom: var(--spacing-sm);
     font-weight: 700;
 }
@@ -1553,7 +1671,7 @@ p {
 
 .hosting-info ul li {
     margin-bottom: var(--spacing-xs);
-    color: #4b5563 !important;
+    color: var(--text-secondary);
 }
 
 .additional-item {
@@ -1634,12 +1752,12 @@ p {
     background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(245, 158, 11, 0.02) 100%);
     border-radius: var(--border-radius-md);
     border-right: 4px solid var(--primary-color);
-    color: #1f2937 !important;
-    font-weight: 500 !important;
+    color: var(--text-primary);
+    font-weight: 500;
 }
 
 .payment-step > span:not(.step-number) {
-    color: #1f2937 !important;
+    color: var(--text-primary);
 }
 
 .step-number {
@@ -1688,13 +1806,13 @@ p {
 }
 
 .quote-note p {
-    color: #4b5563 !important;
+    color: var(--text-secondary);
     line-height: 1.6;
 }
 
 .quote-note strong {
-    color: #1f2937 !important;
-    font-weight: 700 !important;
+    color: var(--text-primary);
+    font-weight: 700;
 }
 
 /* More Tracks Coming Message */
@@ -1777,14 +1895,29 @@ p {
         gap: var(--spacing-lg);
     }
 
+    .quote-title-section h3 {
+        font-size: 1.5rem;
+    }
+
     .quote-summary {
         width: 100%;
-        justify-content: space-between;
+        justify-content: space-around;
+        flex-wrap: wrap;
     }
 
     .summary-item {
         align-items: center;
         text-align: center;
+    }
+
+    .summary-item .value {
+        font-size: 1.5rem;
+    }
+
+    .quote-modules h4,
+    .quote-additional h4,
+    .quote-payment h4 {
+        font-size: 1.25rem;
     }
 
     .module-header {
@@ -1794,6 +1927,11 @@ p {
 
     .module-price {
         align-self: flex-start;
+        font-size: 1.25rem;
+    }
+
+    .maintenance-options {
+        grid-template-columns: 1fr;
     }
 
     .additional-grid {
@@ -1806,10 +1944,76 @@ p {
 
     .btn-large {
         width: 100%;
+        min-width: unset;
     }
 
     .quote-details {
         padding: var(--spacing-lg);
+    }
+
+    .track-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .track-icon i {
+        font-size: 1.75rem;
+    }
+
+    .badge-hot,
+    .badge-soon {
+        font-size: 0.7rem;
+        padding: 4px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pricing-quote {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .quote-title-section h3 {
+        font-size: 1.25rem;
+    }
+
+    .quote-title-section p {
+        font-size: 1rem;
+    }
+
+    .summary-item .value {
+        font-size: 1.25rem;
+    }
+
+    .summary-item .label {
+        font-size: 0.85rem;
+    }
+
+    .track-card {
+        padding: var(--spacing-lg);
+    }
+
+    .module-card {
+        padding: var(--spacing-md);
+    }
+
+    .maintenance-card {
+        padding: var(--spacing-lg);
+    }
+
+    .quote-note {
+        padding: var(--spacing-md);
+        font-size: 0.9rem;
+    }
+
+    .payment-step {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: 0.9rem;
+    }
+
+    .step-number {
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
     }
 }
 
