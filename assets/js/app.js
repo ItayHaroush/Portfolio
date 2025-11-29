@@ -43,7 +43,7 @@ const App = () => {
 
     return (
         <div className="app">
-            <Header 
+            <Header
                 isMenuOpen={isMenuOpen}
                 setIsMenuOpen={setIsMenuOpen}
                 activeSection={activeSection}
@@ -144,7 +144,7 @@ const Hero = ({ scrollToSection }) => {
                         🚀 מפתח Full Stack מקצועי עם מעל 3 שנות ניסיון בפיתוח פתרונות דיגיטליים מתקדמים.
                         מתמחה ביצירת אתרים ואפליקציות שמניבות תוצאות עסקיות מדידות ומשפרות את חוויית המשתמש.
                     </p>
-                    
+
                     <div className="hero-stats">
                         <div className="stat-item" data-aos="fade-up" data-aos-delay="200">
                             <span className="stat-number">7+</span>
@@ -189,7 +189,7 @@ const Hero = ({ scrollToSection }) => {
                             <p>Full Stack Developer</p>
                         </div>
                     </div>
-                    
+
                     <div className="floating-elements">
                         <div className="tech-stack">
                             <div className="tech-item">React</div>
@@ -284,7 +284,7 @@ const Services = () => {
 // Portfolio Section Component
 const Portfolio = () => {
     const [activeFilter, setActiveFilter] = React.useState('all');
-    
+
     // הפרוייקטים והתעודות האמיתיים שלך
     const portfolioItems = [
         // 🚀 פרוייקטים (ממוספרים 1-4 כמו בדף הקיים)
@@ -299,7 +299,7 @@ const Portfolio = () => {
             link: 'https://itayharoush.github.io/MyPortfolio/index.html',
             github: '#',
             featured: true,
-            
+
         },
         {
             id: 2,
@@ -315,7 +315,7 @@ const Portfolio = () => {
             status: '',
             date: '2025',
             skills: ['PHP', 'MySQL', 'APIs', 'Async Programming']
-            
+
         },
         {
             id: 3,
@@ -331,12 +331,12 @@ const Portfolio = () => {
             status: '',
             date: '2025',
             skills: ['MySQL', 'PHP', 'APIs', 'Async Programming']
-            
+
         },
         {
             id: 4,
             title: 'React Portfolio',
-            category: 'websites',
+            category: 'websites , applications',
             type: 'project',
             image: 'assets/images/logo.jpeg',
             description: 'פורטפוליו מתקדם זה עם React, אנימציות ועיצוב responsive מודרני.',
@@ -344,12 +344,24 @@ const Portfolio = () => {
             link: 'https://itayharoush.github.io/Portfolio/index.html',
             github: '#',
             featured: true,
-            
+
         },
-        
+
         // 🏆 תעודות הסמכה (כפי שמופיעות באנימציה)
         {
             id: 5,
+            title: 'Itay ContactApp ',
+            category: 'websites , applications',
+            type: 'project',
+            image: 'assets/images/logoContactApp.png',
+            description: 'אפליקציית אנשי קשר אישית עם עיצוב מודרני סטייל WhatsApp ותגובותי.',
+            technologies: ['HTML5', 'React', 'Node.js', 'CSS3', 'JavaScript'],
+            link: 'https://contact-app-orpin-one.vercel.app',
+            github: '#',
+            featured: true,
+        },
+        {
+            id: 6,
             title: 'Bina Bnya Website',
             category: 'websites',
             type: 'project',
@@ -361,7 +373,7 @@ const Portfolio = () => {
             featured: true,
         },
         {
-            id: 6,
+            id: 7,
             title: 'Pacman Game',
             category: 'games',
             type: 'project',
@@ -372,10 +384,10 @@ const Portfolio = () => {
             github: 'https://github.com/itayHaroush/PacmanGame',
             featured: true,
             isExternal: true,
-       
+
         },
         {
-            id: 7,
+            id: 8,
             title: 'React Development Certificate',
             category: 'certificates',
             type: 'certificate',
@@ -387,7 +399,7 @@ const Portfolio = () => {
             skills: ['React', 'JSX', 'Hooks', 'State Management']
         },
         {
-            id: 8,
+            id: 9,
             title: 'MyLearn-App',
             category: 'applications',
             type: 'project',
@@ -399,7 +411,7 @@ const Portfolio = () => {
             status: 'coming-soon',
         },
         {
-            id: 9,
+            id: 10,
             title: 'CSS Mastery Certificate',
             category: 'certificates',
             type: 'certificate',
@@ -411,7 +423,7 @@ const Portfolio = () => {
             skills: ['CSS', 'Responsive Design', 'UX/UI']
         },
         {
-            id: 10,
+            id: 11,
             title: 'Java Induction Certificate',
             category: 'certificates',
             type: 'certificate',
@@ -423,7 +435,7 @@ const Portfolio = () => {
             skills: ['Java', 'API Development', 'OOP']
         },
         {
-            id: 11,
+            id: 12,
             title: 'TypeScript Basics Certificate',
             category: 'certificates',
             type: 'certificate',
@@ -435,8 +447,8 @@ const Portfolio = () => {
             skills: ['TypeScript', 'Data Types', 'Modular Development']
         },
         {
-          
-            id: 12,
+
+            id: 13,
             title: 'Web Development Certificate',
             category: 'certificates',
             type: 'certificate',
@@ -446,10 +458,10 @@ const Portfolio = () => {
             date: '2024',
             link: '#',
             skills: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design']
-            
+
         },
         {
-            id: 13,
+            id: 14,
             title: 'JavaScript Advanced Certificate',
             category: 'certificates',
             type: 'certificate',
@@ -461,7 +473,7 @@ const Portfolio = () => {
             skills: ['ES6+', 'DOM', 'APIs', 'Async Programming']
         },
         {
-            id: 14,
+            id: 15,
             title: 'Frontend Development Certificate',
             category: 'certificates',
             type: 'certificate',
@@ -485,8 +497,8 @@ const Portfolio = () => {
 
     // חישוב הפריטים המסוננים עם useMemo כדי לוודא עדכון מיידי
     const filteredItems = React.useMemo(() => {
-        return activeFilter === 'all' 
-            ? portfolioItems 
+        return activeFilter === 'all'
+            ? portfolioItems
             : portfolioItems.filter(item => item.category === activeFilter);
     }, [activeFilter, portfolioItems]);
 
@@ -526,17 +538,17 @@ const Portfolio = () => {
                         >
                             <div className="portfolio-image">
                                 <img src={item.image} alt={item.title} />
-                                
+
                                 {/* מספר פרוייקט */}
                                 {item.number && (
                                     <span className="project-number">{item.number}</span>
                                 )}
-                                
+
                                 {/* תגיות מיוחדות */}
                                 {item.featured && <span className="featured-badge">מומלץ</span>}
                                 {item.status === 'coming-soon' && <span className="coming-soon-badge">בקרוב</span>}
                                 {item.type === 'certificate' && <span className="certificate-badge">תעודה</span>}
-                                
+
                                 <div className="portfolio-overlay">
                                     <div className="portfolio-actions">
                                         {item.type === 'certificate' ? (
@@ -581,7 +593,7 @@ const Portfolio = () => {
                             <div className="portfolio-content">
                                 <h3 className="portfolio-title">{item.title}</h3>
                                 <p className="portfolio-description">{item.description}</p>
-                                
+
                                 {item.type === 'certificate' ? (
                                     <div className="certificate-info">
                                         <div className="issuer">
@@ -651,16 +663,16 @@ const Contact = () => {
         const checkWhatsApp = () => {
             const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
             const hasWhatsApp = isMobile || navigator.userAgent.includes('WhatsApp');
-            
+
             console.log('📱 Device info:', {
                 isMobile,
                 hasWhatsApp,
                 userAgent: navigator.userAgent
             });
-            
+
             return { isMobile, hasWhatsApp };
         };
-        
+
         window.deviceInfo = checkWhatsApp();
     }, []);
 
@@ -673,15 +685,15 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        
+
         console.log('🔍 Form submitted with data:', formData); // דיבוג
-        
+
         // בדיקה שהשדות החובה מלאים
         if (!formData.name || !formData.email || !formData.subject || !formData.message) {
             alert('⚠️ אנא מלאו את כל השדות החובה המסומנים ב-*');
             return;
         }
-        
+
         // יצירת הודעת וואטסאפ מפורטת
         const message = `🌟 *פנייה חדשה מהאתר!*
 
@@ -704,26 +716,26 @@ ${formData.phone ? `• טלפון: ${formData.phone}` : ''}
         const phoneNumber = '972547466508';
         console.log('📱 WhatsApp number:', phoneNumber); // דיבוג
         console.log('💬 Message to send:', message); // דיבוג
-        
+
         // יצירת קישור וואטסאפ
         const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
         console.log('🔗 WhatsApp URL:', whatsappURL); // דיבוג
-        
+
         // הצגת הודעת אישור לפני הפתיחה
         const confirmSend = confirm(`📱 האם ברצונכם לשלוח את ההודעה לוואטסאפ?
     
 ההודעה תישלח ל: +${phoneNumber}
     
 לחצו "אישור" לפתיחת וואטסאפ או "ביטול" לעריכה.`);
-    
+
         if (confirmSend) {
             try {
                 // פתיחת וואטסאפ
                 const opened = window.open(whatsappURL, '_blank');
-                
+
                 if (opened) {
                     console.log('✅ WhatsApp opened successfully'); // דיבוג
-                    
+
                     // הודעת הצלחה משופרת
                     setTimeout(() => {
                         const success = confirm(`✅ וואטסאפ נפתח בהצלחה!
@@ -731,27 +743,27 @@ ${formData.phone ? `• טלפון: ${formData.phone}` : ''}
 🔔 חשוב: אל תשכחו ללחוץ על כפתור השליחה בוואטסאפ!
                     
 האם ברצונכם לנקות את הטופס?`);
-                        
+
                         if (success) {
                             // איפוס הטופס
-                            setFormData({ 
-                                name: '', 
-                                email: '', 
-                                phone: '', 
-                                subject: '', 
-                                message: '' 
+                            setFormData({
+                                name: '',
+                                email: '',
+                                phone: '',
+                                subject: '',
+                                message: ''
                             });
                             console.log('🧹 Form cleared'); // דיבוג
                         }
                     }, 1000);
-                    
+
                 } else {
                     throw new Error('Failed to open WhatsApp');
                 }
-                
+
             } catch (error) {
                 console.error('❌ Error opening WhatsApp:', error); // דיבוג
-                
+
                 // פתרון חלופי - העתקה ללוח
                 navigator.clipboard.writeText(`Message: ${message}\nPhone: +${phoneNumber}`).then(() => {
                     alert(`⚠️ לא ניתן לפתוח וואטסאפ אוטומטית.
@@ -810,7 +822,7 @@ ${formData.phone ? `• טלפון: ${formData.phone}` : ''}
     return (
         <section id="contact" className="contact">
             <div className="container">
-              
+
 
                 <div className="contact-content">
                     <div className="contact-info" data-aos="fade-right">
@@ -818,10 +830,10 @@ ${formData.phone ? `• טלפון: ${formData.phone}` : ''}
                             <h3>🚀 מוכנים להגדיל את העסק?</h3>
                             <p>
                                 <strong>קבלו הצעת מחיר מקצועית ללא התחייבות תוך 24 שעות!</strong>
-                                <br/><br/>
-                                🎯 יעוץ חינם לבחירת הפתרון המתאים<br/>
-                                💰 מחירים הוגנים ושקופים<br/>
-                                ⚡ מסירה מהירה ואמינה<br/>
+                                <br /><br />
+                                🎯 יעוץ חינם לבחירת הפתרון המתאים<br />
+                                💰 מחירים הוגנים ושקופים<br />
+                                ⚡ מסירה מהירה ואמינה<br />
                                 🛠️ תמיכה מלאה לאחר המסירה
                             </p>
                         </div>
@@ -848,76 +860,76 @@ ${formData.phone ? `• טלפון: ${formData.phone}` : ''}
                             ))}
                         </div>
                     </div>
-                      
-                <div className="section-header" data-aos="fade-up">
-                    <h2>בואו ניצור קשר</h2>
-                    <p>מוכנים להפוך את הרעיון שלכם למציאות? אשמח לשמוע על הפרוייקט שלכם</p>
-               
 
-                    <form className="contact-form" onSubmit={handleSubmit} data-aos="fade-left">
-                        <div className="form-group">
-                            <input
-                                type="text"
-                                name="name"
-                                placeholder="השם שלך *"
-                                value={formData.name}
-                                onChange={handleInputChange}
-                                required
-                            />
-                        </div>
+                    <div className="section-header" data-aos="fade-up">
+                        <h2>בואו ניצור קשר</h2>
+                        <p>מוכנים להפוך את הרעיון שלכם למציאות? אשמח לשמוע על הפרוייקט שלכם</p>
 
-                        <div className="form-row">
+
+                        <form className="contact-form" onSubmit={handleSubmit} data-aos="fade-left">
                             <div className="form-group">
                                 <input
-                                    type="email"
-                                    name="email"
-                                    placeholder="כתובת אימייל *"
-                                    value={formData.email}
+                                    type="text"
+                                    name="name"
+                                    placeholder="השם שלך *"
+                                    value={formData.name}
                                     onChange={handleInputChange}
                                     required
                                 />
                             </div>
+
+                            <div className="form-row">
+                                <div className="form-group">
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        placeholder="כתובת אימייל *"
+                                        value={formData.email}
+                                        onChange={handleInputChange}
+                                        required
+                                    />
+                                </div>
+                                <div className="form-group">
+                                    <input
+                                        type="tel"
+                                        name="phone"
+                                        placeholder="מספר טלפון"
+                                        value={formData.phone}
+                                        onChange={handleInputChange}
+                                    />
+                                </div>
+                            </div>
+
                             <div className="form-group">
                                 <input
-                                    type="tel"
-                                    name="phone"
-                                    placeholder="מספר טלפון"
-                                    value={formData.phone}
+                                    type="text"
+                                    name="subject"
+                                    placeholder="נושא הפרוייקט *"
+                                    value={formData.subject}
                                     onChange={handleInputChange}
+                                    required
                                 />
                             </div>
-                        </div>
 
-                        <div className="form-group">
-                            <input
-                                type="text"
-                                name="subject"
-                                placeholder="נושא הפרוייקט *"
-                                value={formData.subject}
-                                onChange={handleInputChange}
-                                required
-                            />
-                        </div>
+                            <div className="form-group">
+                                <textarea
+                                    name="message"
+                                    placeholder="ספרו לי על הפרוייקט שלכם... *"
+                                    rows="6"
+                                    value={formData.message}
+                                    onChange={handleInputChange}
+                                    required
+                                ></textarea>
+                            </div>
 
-                        <div className="form-group">
-                            <textarea
-                                name="message"
-                                placeholder="ספרו לי על הפרוייקט שלכם... *"
-                                rows="6"
-                                value={formData.message}
-                                onChange={handleInputChange}
-                                required
-                            ></textarea>
-                        </div>
-
-                        <button type="submit" className="btn btn-primary btn-full">
-                            <i className='bx bx-send'></i>
-                            שלח הודעה
-                        </button>
-                    </form>
+                            <button type="submit" className="btn btn-primary btn-full">
+                                <i className='bx bx-send'></i>
+                                שלח הודעה
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
-             </div>
         </section>
     );
 };
@@ -934,7 +946,7 @@ const Footer = () => {
                         <h3>איתי הרוש | Itay Solutions</h3>
                         <p>פתרונות פיתוח דיגיטליים מתקדמים</p>
                     </div>
-                    
+
                     <div className="footer-google-section">
                         <div className="google-review-card">
                             <div className="google-icon">
@@ -956,9 +968,9 @@ const Footer = () => {
                         <a href="#portfolio">פרוייקטים</a>
                         <a href="#contact">צור קשר</a>
                     </div>
-                    
+
                 </div>
-                
+
                 <div className="footer-bottom">
                     <p>&copy; {currentYear} איתי הרוש. כל הזכויות שמורות.</p>
                     <div className="scroll-top" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
