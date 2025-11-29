@@ -661,6 +661,19 @@ const Portfolio = () => {
 const PricingQuote = () => {
     const [selectedTrack, setSelectedTrack] = React.useState(null);
     const [showFactoryQuote, setShowFactoryQuote] = React.useState(false);
+    const quoteDetailsRef = React.useRef(null);
+
+    // גלילה מיידית להצעה כשבוחרים track
+    const handleTrackClick = (trackId) => {
+        setSelectedTrack(trackId);
+        // גלילה מיידית לפרטי ההצעה
+        setTimeout(() => {
+            const quoteDetails = document.querySelector('.quote-details');
+            if (quoteDetails) {
+                quoteDetails.scrollIntoView({ behavior: 'instant', block: 'start' });
+            }
+        }, 50);
+    };
 
     const tracks = [
         {
@@ -827,10 +840,9 @@ const PricingQuote = () => {
                         <div
                             key={track.id}
                             className={`track-card ${selectedTrack === track.id ? 'selected' : ''} ${track.highlight ? 'highlight' : ''} ${!track.available ? 'disabled' : ''}`}
-                            onClick={() => track.available && setSelectedTrack(track.id)}
+                            onClick={() => track.available && handleTrackClick(track.id)}
                             data-aos="zoom-in"
                             data-aos-delay={index * 100}
-                            style={track.highlight ? { backgroundColor: '#ffffff' } : {}}
                         >
                             {track.highlight && <span className="badge-hot">🔥 דוגמא זמינה</span>}
                             {!track.available && <span className="badge-soon">בקרוב</span>}
@@ -838,12 +850,12 @@ const PricingQuote = () => {
                             <div className="track-icon">
                                 <i className={`bx ${track.icon}`}></i>
                             </div>
-                            <h3 style={track.highlight ? { color: '#1f2937', fontWeight: '700' } : {}}>{track.title}</h3>
-                            <p style={track.highlight ? { color: '#4b5563' } : {}}>{track.description}</p>
+                            <h3>{track.title}</h3>
+                            <p>{track.description}</p>
 
                             <ul className="track-features">
                                 {track.features.map((feature, i) => (
-                                    <li key={i} style={track.highlight ? { color: '#4b5563' } : {}}>
+                                    <li key={i}>
                                         <i className='bx bx-check-circle'></i>
                                         {feature}
                                     </li>
