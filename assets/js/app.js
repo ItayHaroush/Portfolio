@@ -287,6 +287,15 @@ const Services = () => {
 const Portfolio = () => {
     const [activeFilter, setActiveFilter] = React.useState('all');
 
+    // רענון AOS כשמשתנה הפילטר
+    React.useEffect(() => {
+        if (typeof AOS !== 'undefined') {
+            setTimeout(() => {
+                AOS.refresh();
+            }, 100);
+        }
+    }, [activeFilter]);
+
     // הפרוייקטים והתעודות האמיתיים שלך
     const portfolioItems = [
         // 🚀 פרוייקטים (ממוספרים 1-4 כמו בדף הקיים)
@@ -497,12 +506,10 @@ const Portfolio = () => {
         { id: 'certificates', label: 'תעודות הסמכה', icon: 'bx-medal' }
     ];
 
-    // חישוב הפריטים המסוננים עם useMemo כדי לוודא עדכון מיידי
-    const filteredItems = React.useMemo(() => {
-        return activeFilter === 'all'
-            ? portfolioItems
-            : portfolioItems.filter(item => item.category === activeFilter);
-    }, [activeFilter, portfolioItems]);
+    // חישוב הפריטים המסוננים - תלוי רק ב-activeFilter
+    const filteredItems = activeFilter === 'all'
+        ? portfolioItems
+        : portfolioItems.filter(item => item.category === activeFilter);
 
     return (
         <section id="portfolio" className="portfolio section">

@@ -128,37 +128,12 @@ const initLoadingAnimation = () => {
 };
 
 // Interactive portfolio filtering with animation
+// DISABLED: React handles portfolio filtering via useState
+// This vanilla JS version was conflicting with React's state management
 const enhancePortfolioFiltering = () => {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const portfolioItems = document.querySelectorAll('.portfolio-item');
-    
-    if (!filterButtons.length || !portfolioItems.length) return;
-    
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const filter = button.textContent.trim();
-            
-            // Update active button
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            
-            // Filter and animate items
-            portfolioItems.forEach((item, index) => {
-                const category = item.dataset.category;
-                const shouldShow = filter === 'הכל' || category === filter;
-                
-                if (shouldShow) {
-                    setTimeout(() => {
-                        item.style.display = 'block';
-                        item.classList.add('scale-in');
-                    }, index * 100);
-                } else {
-                    item.style.display = 'none';
-                    item.classList.remove('scale-in');
-                }
-            });
-        });
-    });
+    // React now manages portfolio filtering - see Portfolio component in app.js
+    // Keeping this function empty to avoid breaking any external calls
+    return;
 };
 
 // Form validation and submission
