@@ -221,28 +221,34 @@ const Hero = ({ scrollToSection }) => {
 const Services = () => {
     const services = [
         {
-            icon: 'bx-desktop',
-            title: '🌐 אתרים עסקיים מתקדמים',
-            description: 'אתרי אינטרנט מקצועיים המניבים לידים ומגדילים מכירות עם עיצוב שמושך ומתקדם טכנולוגית',
-            features: ['תוצאות SEO מובטחות', 'זמן טעינה מהיר (מתחת ל-3 שניות)', 'מותאם לכל המכשירים', 'מערכת ניהול תוכן פשוטה']
+            icon: 'bx-building-house',
+            title: '🏢 אתרי תדמית לעסקים',
+            description: 'אתרים מקצועיים שמייצגים את העסק שלך ומביאים לקוחות חדשים',
+            features: ['עיצוב מותאם למותג', 'SEO מובנה להופעה בגוגל', 'מותאם לכל המכשירים', 'מערכת ניהול תוכן פשוטה'],
+            exampleLink: 'https://www-hzh6.vercel.app/',
+            exampleName: 'בינה לבנייה'
         },
         {
-            icon: 'bx-mobile-alt',
-            title: '💼 מערכות ניהול חכמות',
-            description: 'פתרונות CRM ו-ERP מותאמים אישית שחוסכים זמן ומייעלים תהליכים עסקיים',
-            features: ['ממשק משתמש אינטואיטיבי', 'אינטגרציה עם מערכות קיימות', 'דוחות ואנליטיקה מתקדמת', 'גיבוי אוטומטי ואבטחת מידע']
+            icon: 'bx-envelope',
+            title: '📧 דפי נחיתה + ניוזלטר',
+            description: 'פתרון מושלם לעסקים קטנים, רופאים, מכוני יופי ומאמני כושר - להמרת גולשים ללקוחות',
+            features: ['דף נחיתה ממיר', 'מערכת ניוזלטר אוטומטית', 'טפסי הרשמה חכמים', 'אינטגרציה עם רשתות חברתיות']
         },
         {
-            icon: 'bx-store',
-            title: '🛒 חנויות אונליין מניבות',
-            description: 'פלטפורמות מכירה דיגיטליות המביאות תוצאות מיידיות עם חוויית קנייה מותאמת',
-            features: ['מערכת תשלומים מאובטחת', 'ניהול מלאי חכם', 'שיווק אוטומטי ללקוחות', 'אופטימיזציה להמרות גבוהות']
+            icon: 'bx-cog',
+            title: '⚙️ מערכות ניהול חכמות',
+            description: 'פתרונות לפי בעיה, לא פרויקטים כלליים',
+            features: ['ממשק משתמש אינטואיטיבי', 'פתרון מותאם לצורך הספציפי', 'דוחות ואנליטיקה מתקדמת', 'אבטחת מידע וגיבוי אוטומטי'],
+            exampleLinks: [
+                { name: 'ChefSync', url: 'https://tefenorders.great-site.net/landingPage.php?i=1' },
+                { name: 'Rotem Nails', url: 'https://rotemamosnails.great-site.net/rhNails.php?i=1' }
+            ]
         },
         {
-            icon: 'bx-trending-up',
-            title: '📈 אופטימיזציה וצמיחה',
-            description: 'שיפור ביצועים קיימים והגדלת ROI דרך אנליזה טכנית וחדשנות דיגיטלית',
-            features: ['ניתוח ביצועים מקיף', 'שיפור מהירות וחוויה', 'אסטרטגיית צמיחה דיגיטלית', 'תמיכה טכנית מתמשכת']
+            icon: 'bx-wrench',
+            title: '🔧 תחזוקה חודשית',
+            description: 'הכסף היציב - שמירה על האתר שלך מעודכן, מאובטח ומהיר לאורך זמן',
+            features: ['עדכוני אבטחה שוטפים', 'גיבויים אוטומטיים', 'תמיכה טכנית מתמשכת', 'שיפורים ואופטימיזציה']
         }
     ];
 
@@ -257,6 +263,7 @@ const Services = () => {
                 <div className="services-grid">
                     {services.map((service, index) => (
                         <div
+
                             key={index}
                             className="service-card"
                             data-aos="fade-up"
@@ -266,7 +273,20 @@ const Services = () => {
                                 <i className={`bx ${service.icon}`}></i>
                             </div>
                             <h3>{service.title}</h3>
-                            <p>{service.description}</p>
+                            <p>
+                                {service.description}
+                                {service.exampleLink && (
+                                    <> - כמו <a href={service.exampleLink} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary-color)', textDecoration: 'underline' }}>{service.exampleName}</a></>
+                                )}
+                                {service.exampleLinks && (
+                                    <> - כמו {service.exampleLinks.map((link, i) => (
+                                        <span key={i}>
+                                            <a href={link.url} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary-color)', textDecoration: 'underline' }}>{link.name}</a>
+                                            {i < service.exampleLinks.length - 1 && ' ו-'}
+                                        </span>
+                                    ))}</>
+                                )}
+                            </p>
                             <ul className="service-features">
                                 {service.features.map((feature, i) => (
                                     <li key={i}>
