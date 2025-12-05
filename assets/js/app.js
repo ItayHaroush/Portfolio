@@ -164,7 +164,7 @@ const Hero = ({ scrollToSection }) => {
 
                     <div className="hero-buttons" data-aos="fade-up" data-aos-delay="500">
                         <button
-                            className="btn btn-primary"
+                            className="btn btn-primary btn-hero-main"
                             onClick={() => scrollToSection('contact')}
                         >
                             <i className='bx bx-phone'></i>
@@ -176,6 +176,14 @@ const Hero = ({ scrollToSection }) => {
                         >
                             <i className='bx bx-folder'></i>
                             הפרוייקטים שלי
+                        </button>
+                        <button className="btn btn-outline" onClick={() => scrollToSection('services')}>
+                            <i className='bx bx-briefcase'></i>
+                            <span>השירותים</span>
+                        </button>
+                        <button className="btn btn-outline" onClick={() => scrollToSection('pricing')}>
+                            <i className='bx bx-calculator'></i>
+                            <span>הצעת מחיר</span>
                         </button>
                     </div>
                 </div>

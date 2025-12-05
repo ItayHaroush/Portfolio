@@ -2,18 +2,19 @@
 
 /* Enhanced Mobile Styles */
 @media (max-width: 768px) {
+
     /* Improve touch targets */
     .btn {
         min-height: 44px;
         min-width: 44px;
         padding: var(--spacing-md) var(--spacing-lg);
     }
-    
+
     .nav-link {
         min-height: 44px;
         padding: var(--spacing-md);
     }
-    
+
     /* Floating elements responsive adjustments */
     .floating-elements {
         top: -30px;
@@ -21,13 +22,13 @@
         right: -30px;
         bottom: -30px;
     }
-    
+
     .tech-stack {
         top: 15%;
         left: -15%;
         gap: var(--spacing-sm);
     }
-    
+
     .tech-item {
         font-size: 0.8rem;
         padding: var(--spacing-xs) var(--spacing-sm);
@@ -36,7 +37,8 @@
     /* Ensure hero content is not hidden by the fixed header on mobile
        Reserve extra top space equal to the navbar height (adjustable) */
     :root {
-        --navbar-height: 70px; /* adjust if your header is taller */
+        --navbar-height: 70px;
+        /* adjust if your header is taller */
     }
 
     .hero {
@@ -47,52 +49,73 @@
     /* Bring the down-arrow into view and ensure it's above other layers */
     .scroll-indicator {
         z-index: 1100;
-        bottom: 1rem; /* make arrow visible above bottom chrome */
+        bottom: 1rem;
+        /* make arrow visible above bottom chrome */
     }
-    
+
     .hero-content {
         padding: 0 var(--spacing-md);
         gap: var(--spacing-2xl);
-        margin-top: 150px; /* offset the extra top padding */
+        margin-top: 150px;
+        /* offset the extra top padding */
         margin-bottom: var(--spacing-xl);
     }
-   
+
     .hero-text h1 {
         font-size: clamp(2rem, 8vw, 2.5rem);
         line-height: 1.1;
     }
-    
+
     .hero-text h2 {
         font-size: clamp(1.2rem, 5vw, 1.5rem);
     }
-    
+
     .hero-text p {
         font-size: 1rem;
         line-height: 1.6;
     }
-    
+
     .hero-stats {
         flex-wrap: wrap;
         gap: var(--spacing-lg);
         justify-content: space-around;
     }
-    
+
     .stat-item {
         flex: 1;
         min-width: 80px;
     }
-    
+
     .hero-buttons {
-        flex-direction: column;
-        gap: var(--spacing-md);
-        width: 100%;
-    }
-    
-    .btn {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: var(--spacing-sm);
         width: 100%;
         justify-content: center;
     }
-    
+
+    /* Main CTA button - full width */
+    .hero-buttons .btn-hero-main {
+        width: 100%;
+        flex: 1 1 100%;
+        order: -1;
+        font-size: 1.1rem;
+        padding: var(--spacing-md) var(--spacing-xl);
+    }
+
+    /* Other 3 buttons - equal width in one row */
+    .hero-buttons .btn:not(.btn-hero-main) {
+        flex: 1 1 30%;
+        min-width: 0;
+        padding: var(--spacing-sm) var(--spacing-sm);
+        font-size: 0.8rem;
+    }
+
+    .hero-buttons .btn:not(.btn-hero-main) i {
+        font-size: 1rem;
+    }
+
     /* Mobile navigation improvements */
     .nav-menu {
         /* anchor to top so the menu content is visible immediately when opened */
@@ -100,7 +123,8 @@
         top: 0;
         left: 0;
         right: 0;
-        background: #ffffff; /* keep menu white for clarity on mobile */
+        background: #ffffff;
+        /* keep menu white for clarity on mobile */
         flex-direction: column;
         /* reserve space for the header/brand so items don't get hidden behind it */
         padding-top: calc(var(--navbar-height, 70px) + 0.75rem);
@@ -127,48 +151,48 @@
     .navbar {
         z-index: 1200;
     }
-    
+
     .nav-link {
         width: 100%;
         justify-content: center;
         border-radius: var(--border-radius-lg);
         margin-bottom: var(--spacing-sm);
     }
-    
+
     /* Optimize sections for mobile */
     .section-header {
         margin-bottom: var(--spacing-2xl);
         padding: 0 var(--spacing-sm);
     }
-    
+
     .section-header h2 {
         font-size: clamp(1.8rem, 6vw, 2.2rem);
     }
-    
+
     /* Services section mobile */
     .services {
         padding: var(--spacing-2xl) 0;
     }
-    
+
     .services-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
     }
-    
+
     .service-card {
         padding: var(--spacing-lg);
         text-align: center;
     }
-    
+
     .service-icon {
         margin: 0 auto var(--spacing-lg);
     }
-    
+
     /* Portfolio section mobile */
     .portfolio {
         padding: var(--spacing-2xl) 0;
     }
-    
+
     .portfolio-filters {
         justify-content: flex-start;
         overflow-x: auto;
@@ -177,90 +201,93 @@
         scrollbar-width: none;
         -ms-overflow-style: none;
     }
-    
+
     .portfolio-filters::-webkit-scrollbar {
         display: none;
     }
-    
+
     .filter-btn {
         white-space: nowrap;
         flex-shrink: 0;
         padding: var(--spacing-sm) var(--spacing-lg);
     }
-    
+
     .portfolio-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
     }
-    
+
     .portfolio-item {
         max-width: 100%;
     }
-    
+
     .portfolio-overlay {
         padding: var(--spacing-lg);
     }
-    
+
     /* Contact section mobile */
     .contact {
         padding: var(--spacing-2xl) 0;
     }
-    
+
     .contact-content {
         grid-template-columns: 1fr;
         gap: var(--spacing-2xl);
     }
-    
+
     .contact-methods {
         gap: var(--spacing-md);
     }
-    
+
     .contact-method {
         padding: var(--spacing-lg);
         flex-direction: row;
         align-items: center;
         text-align: right;
     }
-    
+
     .method-icon {
         flex-shrink: 0;
         width: 50px;
         height: 50px;
         font-size: 1.2rem;
     }
-    
+
     .contact-form {
         padding: var(--spacing-lg);
     }
-    
+
     .form-row {
         grid-template-columns: 1fr;
         gap: var(--spacing-md);
     }
-    
+
     /* Footer mobile */
     .footer-content {
         flex-direction: column;
         text-align: center;
         gap: var(--spacing-lg);
     }
-    
+
     .footer-links {
         flex-wrap: wrap;
         justify-content: center;
         gap: var(--spacing-lg);
     }
-    
+
     .footer-bottom {
         flex-direction: column;
         gap: var(--spacing-md);
         text-align: center;
     }
 }
+
 .scroll-indicator {
     z-index: 1100;
-    bottom: 1rem; /* make arrow visible above bottom chrome */
+    bottom: 1rem;
+    /* make arrow visible above bottom chrome */
 }
+
 /* Extra small devices */
 @media (max-width: 480px) {
     :root {
@@ -272,42 +299,65 @@
         --spacing-2xl: 1.75rem;
         --spacing-3xl: 2rem;
     }
-    
+
     .container {
         padding: 0 var(--spacing-md);
     }
-    
+
     .hero {
         min-height: 90vh;
         padding: var(--spacing-xl) 0;
     }
-    
+
     .hero-text h1 {
         font-size: clamp(1.8rem, 10vw, 2.2rem);
     }
-    
+
     .hero-stats {
         gap: var(--spacing-md);
     }
-    
+
     .stat-item {
         min-width: 70px;
     }
-    
+
     .stat-number {
         font-size: 1.5rem;
     }
-    
+
+    /* Hero buttons - extra small screens */
+    .hero-buttons {
+        gap: var(--spacing-xs);
+    }
+
+    /* Main button stays full width */
+    .hero-buttons .btn-hero-main {
+        width: 100%;
+        flex: 1 1 100%;
+        font-size: 1rem;
+    }
+
+    /* 3 buttons still in row but smaller */
+    .hero-buttons .btn:not(.btn-hero-main) {
+        flex: 1 1 30%;
+        padding: var(--spacing-xs) var(--spacing-xs);
+        font-size: 0.7rem;
+    }
+
+    .hero-buttons .btn:not(.btn-hero-main) i {
+        font-size: 0.9rem;
+    }
+
     .profile-card {
         padding: var(--spacing-lg);
         margin: 0 var(--spacing-sm);
     }
-    
+
     .profile-image {
         width: 100px;
         height: 100px;
     }
-    
+
     /* Floating elements adjustments for very small screens */
     .floating-elements {
         top: -20px;
@@ -315,49 +365,49 @@
         right: 400px;
         bottom: -20px;
     }
-    
+
     .tech-stack {
         top: 10%;
         left: -10%;
         gap: var(--spacing-xs);
     }
-    
+
     .tech-item {
         font-size: 0.7rem;
         padding: 2px var(--spacing-xs);
     }
-    
+
     .service-card {
         padding: var(--spacing-md);
     }
-    
+
     .service-icon {
         width: 60px;
         height: 60px;
         font-size: 1.5rem;
     }
-    
+
     .portfolio-filters {
         padding: 0 var(--spacing-sm) var(--spacing-sm);
     }
-    
+
     .filter-btn {
         font-size: 0.9rem;
         padding: var(--spacing-xs) var(--spacing-md);
     }
-    
+
     .contact-method {
         padding: var(--spacing-md);
         flex-direction: column;
         text-align: center;
         gap: var(--spacing-sm);
     }
-    
+
     .method-icon {
         width: 45px;
         height: 45px;
     }
-    
+
     .contact-form {
         padding: var(--spacing-md);
     }
@@ -365,23 +415,24 @@
 
 /* Touch-specific improvements */
 @media (hover: none) and (pointer: coarse) {
+
     /* Remove hover effects on touch devices */
     .service-card:hover,
     .portfolio-item:hover,
     .contact-method:hover {
         transform: none;
     }
-    
+
     /* Add touch feedback */
     .btn:active {
         transform: scale(0.98);
     }
-    
+
     .nav-link:active,
     .contact-method:active {
         background: rgba(99, 102, 241, 0.1);
     }
-    
+
     /* Improve touch scrolling */
     .portfolio-filters {
         -webkit-overflow-scrolling: touch;
@@ -389,7 +440,9 @@
 }
 
 /* High DPI displays */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+
     /* Optimize for retina displays */
     .profile-image img {
         image-rendering: -webkit-optimize-contrast;
@@ -402,21 +455,21 @@
         min-height: 100vh;
         padding: var(--spacing-lg) 0;
     }
-    
+
     .hero-content {
         grid-template-columns: 1fr 1fr;
         gap: var(--spacing-xl);
         align-items: center;
     }
-    
+
     .hero-text {
         order: 1;
     }
-    
+
     .hero-visual {
         order: 2;
     }
-    
+
     .nav-menu {
         max-height: calc(100vh - 60px);
     }
@@ -424,18 +477,19 @@
 
 /* Accessibility improvements */
 @media (prefers-reduced-motion: reduce) {
-    .hero-text > *,
+
+    .hero-text>*,
     .service-card,
     .portfolio-item,
     .contact-method {
         animation: none !important;
         transition-duration: 0.01ms !important;
     }
-    
+
     .typing-text .cursor {
         animation: none !important;
     }
-    
+
     .scroll-indicator .scroll-arrow {
         animation: none !important;
     }
@@ -448,14 +502,15 @@
         background: #ffffff !important;
         border-top-color: var(--border-color);
     }
-    
+
     .contact-form {
         background: var(--bg-secondary);
     }
 
     /* make hamburger lines contrast the (white) menu when in dark mode on mobile */
     .menu-toggle span {
-        background: var(--text-primary) !important; /* dark lines */
+        background: var(--text-primary) !important;
+        /* dark lines */
     }
 }
 
@@ -466,14 +521,14 @@
         min-height: auto;
         padding: var(--spacing-lg) 0;
     }
-    
+
     .services,
     .portfolio,
     .contact {
         page-break-inside: avoid;
         padding: var(--spacing-lg) 0;
     }
-    
+
     .service-card,
     .portfolio-item {
         break-inside: avoid;
